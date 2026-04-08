@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 97%;
+    --foreground: 0 0% 17%;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-body min-h-screen antialiased;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .body-scroll-lock {
+    @apply overflow-hidden;
+  }
+  
+  .glass-header {
+    @apply bg-white/80 backdrop-blur-md border-b border-border-soft;
+  }
+}
