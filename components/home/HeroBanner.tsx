@@ -12,9 +12,9 @@ export default function HeroBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mb-4 md:mb-6"
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-ink mb-4 md:mb-6 tracking-tight"
         >
-          <img src="/Elbi_Beauty_Logo.png" alt="Elbi Beauty" className="h-16 md:h-24 lg:h-32 w-auto object-contain" />
+          ELBI BEAUTY
         </motion.h1>
         
         <motion.p 

@@ -20,9 +20,8 @@ export default function AdminNav() {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-border-soft shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/admin" className="inline-flex items-center">
-            <img src="/Elbi_Beauty_Logo.png" alt="Elbi Beauty Admin" className="h-8 w-auto" />
-            <span className="ml-3 font-semibold text-rose-dark hidden sm:inline-block">Admin</span>
+          <Link href="/admin" className="font-display text-xl font-bold text-ink hover:text-rose transition-colors">
+            ELBI BEAUTY <span className="text-rose-dark">Admin</span>
           </Link>
         </div>
         

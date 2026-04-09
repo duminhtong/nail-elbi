@@ -21,8 +21,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full glass-header transition-all">
       <div className="container mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
-        <Link href="/" className="inline-flex items-center">
-          <img src="/Elbi_Beauty_Logo.png" alt="Elbi Beauty" className="h-8 md:h-10 w-auto" />
+        <Link href="/" className="font-display text-2xl font-bold tracking-tight text-ink">
+          ELBI BEAUTY
         </Link>
         
         {/* Desktop Nav */}
