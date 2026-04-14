@@ -24,7 +24,7 @@ const cards = [
   },
   {
     title: "Lớp Học",
-    description: "Không gian học tập của chúng tôi",
+    description: "Không gian học tập",
     icon: Camera,
     href: "/classroom",
     color: "text-emerald-500",
@@ -58,7 +58,7 @@ const itemVariants = {
 export default function QuickNavCards() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
