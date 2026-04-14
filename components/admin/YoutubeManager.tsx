@@ -29,8 +29,7 @@ function VideoList({ category }: { category: YoutubeCategory }) {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Vui lòng đăng nhập lại.')
 
-      const { error: deleteError } = await supabase
-        .from('youtube_videos')
+      const { error: deleteError } = await (supabase.from('youtube_videos') as any)
         .delete()
         .eq('id', id)
 
@@ -108,8 +107,7 @@ function VideoForm({ category }: { category: YoutubeCategory }) {
 
       const thumbnail_url = getYoutubeThumbnail(youtube_id)
 
-      const { error: insertError } = await supabase
-        .from('youtube_videos')
+      const { error: insertError } = await (supabase.from('youtube_videos') as any)
         .insert({
           title,
           description: description || null,

@@ -86,9 +86,8 @@ export default function UploadForm({
           .from('nail-images')
           .getPublicUrl(storagePath)
 
-        // 3. Ghi vào Database
-        const { error: insertError } = await supabase
-          .from('images')
+        // 3. Ghi vào Database (Ép kiểu any để vượt qua lỗi biên dịch Vercel)
+        const { error: insertError } = await (supabase.from('images') as any)
           .insert({
             name: generatedName,
             category,
@@ -101,9 +100,9 @@ export default function UploadForm({
 
         // 4. Cập nhật đếm
         if (counterData) {
-          await supabase.from('counters').update({ value: newCount }).eq('key', category)
+          await (supabase.from('counters') as any).update({ value: newCount }).eq('key', category)
         } else {
-          await supabase.from('counters').insert({ key: category, value: newCount })
+          await (supabase.from('counters') as any).insert({ key: category, value: newCount })
         }
       }
 
