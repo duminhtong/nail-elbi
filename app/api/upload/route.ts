@@ -35,13 +35,14 @@ export async function POST(request: Request) {
         .from('counters')
         .select('value')
         .eq('key', category)
+        .limit(1)
         .maybeSingle()
 
       if (counterError) {
         return NextResponse.json({ error: `Failed to get counter: ${counterError.message}` }, { status: 500 })
       }
 
-      const currentCount = counterData ? counterData.value : 0
+      const currentCount = counterData ? (counterData as any).value : 0
       const newCount = currentCount + 1
       const generatedName = generateImageName(category, currentCount)
 
