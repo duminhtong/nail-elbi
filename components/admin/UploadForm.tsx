@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label'
 import { UploadCloud, Loader2 } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
 import type { ImageCategory } from '@/types'
+import { createClient } from '@/lib/supabase/client'
+import { generateImageName } from '@/lib/utils/nameGenerator'
 
 export default function UploadForm({
   category,
@@ -47,24 +49,64 @@ export default function UploadForm({
     setUploading(true)
     
     try {
-      const formData = new FormData()
-      files.forEach(file => formData.append('files', file))
-      formData.append('category', category)
-      if (category === 'student_work' && batch) {
-        formData.append('batch', batch)
+      const supabase = createClient()
+      
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) throw new Error('Vui lòng đăng nhập lại.')
+
+      for (const file of files) {
+        // 1. Lấy counter
+        const { data: counterData, error: counterError } = await supabase
+          .from('counters')
+          .select('value')
+          .eq('key', category)
+          .maybeSingle()
+
+        if (counterError) throw new Error(`Lỗi đếm số: ${counterError.message}`)
+
+        const currentCount = counterData ? counterData.value : 0
+        const newCount = currentCount + 1
+        const generatedName = generateImageName(category, currentCount)
+
+        // 2. Upload Ảnh thẳng lên Supabase (Bỏ qua Vercel để không kẹt băng thông)
+        const fileExt = file.name.split('.').pop()
+        const fileName = `${category}_${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`
+        const storagePath = `${category}/${fileName}`
+
+        const { error: uploadError } = await supabase
+          .storage
+          .from('nail-images')
+          .upload(storagePath, file, { cacheControl: '3600', upsert: false })
+
+        if (uploadError) throw new Error(`Lỗi lưu trữ: ${uploadError.message}`)
+
+        const { data: publicUrlData } = supabase
+          .storage
+          .from('nail-images')
+          .getPublicUrl(storagePath)
+
+        // 3. Ghi vào Database
+        const { error: insertError } = await supabase
+          .from('images')
+          .insert({
+            name: generatedName,
+            category,
+            storage_path: storagePath,
+            public_url: publicUrlData.publicUrl,
+            batch: batch || null,
+          })
+
+        if (insertError) throw new Error(`Lỗi cơ sở dữ liệu: ${insertError.message}`)
+
+        // 4. Cập nhật đếm
+        if (counterData) {
+          await supabase.from('counters').update({ value: newCount }).eq('key', category)
+        } else {
+          await supabase.from('counters').insert({ key: category, value: newCount })
+        }
       }
 
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData
-      })
-
-      if (!res.ok) {
-        const data = await res.json()
-        throw new Error(data.error || 'Upload failed')
-      }
-
-      toast({ title: "Thành công", description: `Đã tải lên ${files.length} ảnh.` })
+      toast({ title: "Thành công", description: `Đã tải trực tiếp ${files.length} ảnh.` })
       setFiles([])
       setBatch('')
       if (fileInputRef.current) fileInputRef.current.value = ''
