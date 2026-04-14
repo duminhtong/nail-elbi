@@ -55,16 +55,16 @@ export default function UploadForm({
       if (!user) throw new Error('Vui lòng đăng nhập lại.')
 
       for (const file of files) {
-        // 1. Lấy counter
-        const { data: counterData, error: counterError } = await supabase
+        // 1. Lấy counter (Lấy dạng mảng để tuyệt đối không bị lỗi single-object)
+        const { data: counterRows, error: counterError } = await supabase
           .from('counters')
           .select('value')
           .eq('key', category)
-          .limit(1)
-          .maybeSingle()
+          .order('value', { ascending: false })
 
         if (counterError) throw new Error(`Lỗi đếm số: ${counterError.message}`)
 
+        const counterData = counterRows && counterRows.length > 0 ? counterRows[0] : null
         const currentCount = counterData ? (counterData as any).value : 0
         const newCount = currentCount + 1
         const generatedName = generateImageName(category, currentCount)
