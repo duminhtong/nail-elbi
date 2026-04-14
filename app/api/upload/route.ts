@@ -35,14 +35,15 @@ export async function POST(request: Request) {
         .from('counters')
         .select('value')
         .eq('key', category)
-        .single()
+        .maybeSingle()
 
       if (counterError) {
         return NextResponse.json({ error: `Failed to get counter: ${counterError.message}` }, { status: 500 })
       }
 
-      const newCount = ((counterData as any)?.value || 0) + 1
-      const generatedName = generateImageName(category, (counterData as any)?.value || 0)
+      const currentCount = counterData ? counterData.value : 0
+      const newCount = currentCount + 1
+      const generatedName = generateImageName(category, currentCount)
 
       // Upload to storage
       const fileExt = file.name.split('.').pop()
@@ -85,10 +86,15 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: `DB Insert error: ${insertError.message}` }, { status: 500 })
       }
 
-      // Update counter
-      await (adminClient.from('counters') as any)
-        .update({ value: newCount })
-        .eq('key', category)
+      // Update counter (or insert if it didn't exist)
+      if (counterData) {
+        await (adminClient.from('counters') as any)
+          .update({ value: newCount })
+          .eq('key', category)
+      } else {
+        await (adminClient.from('counters') as any)
+          .insert({ key: category, value: newCount })
+      }
 
       uploadedImages.push(insertData)
     }
