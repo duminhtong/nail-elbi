@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { useYoutube } from '@/lib/hooks/useYoutube'
 import { extractYoutubeId, getYoutubeThumbnail } from '@/lib/utils/youtube'
+import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -24,8 +25,16 @@ function VideoList({ category }: { category: YoutubeCategory }) {
 
     setDeletingId(id)
     try {
-      const res = await fetch(`/api/youtube/${id}`, { method: 'DELETE' })
-      if (!res.ok) throw new Error('Xóa thất bại')
+      const supabase = createClient()
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) throw new Error('Vui lòng đăng nhập lại.')
+
+      const { error: deleteError } = await supabase
+        .from('youtube_videos')
+        .delete()
+        .eq('id', id)
+
+      if (deleteError) throw new Error(`Lỗi cập nhật CSDL: ${deleteError.message}`)
       toast({ title: "Đã xóa", description: `Video đã được xóa khỏi danh sách.` })
       mutate()
     } catch (err: any) {
@@ -90,16 +99,27 @@ function VideoForm({ category }: { category: YoutubeCategory }) {
     setAdding(true)
 
     try {
-      const res = await fetch('/api/youtube/create', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ youtube_url: url, title, description, category })
-      })
+      const supabase = createClient()
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) throw new Error('Vui lòng đăng nhập lại.')
 
-      if (!res.ok) {
-        const data = await res.json()
-        throw new Error(data.error || 'Thêm thất bại')
-      }
+      const youtube_id = extractYoutubeId(url)
+      if (!youtube_id) throw new Error('Link YouTube không hợp lệ.')
+
+      const thumbnail_url = getYoutubeThumbnail(youtube_id)
+
+      const { error: insertError } = await supabase
+        .from('youtube_videos')
+        .insert({
+          title,
+          description: description || null,
+          youtube_url: url,
+          youtube_id,
+          category,
+          thumbnail_url,
+        })
+
+      if (insertError) throw new Error(`Lỗi cập nhật CSDL: ${insertError.message}`)
 
       toast({ title: "Thành công", description: "Đã thêm video mới." })
       setUrl('')
