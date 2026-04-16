@@ -37,22 +37,38 @@ create table public.course_info (
   updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
+create table public.blogs (
+  id uuid default gen_random_uuid() primary key,
+  slug text unique not null,
+  title text not null,
+  excerpt text,
+  content text not null,
+  cover_image text,
+  meta_title text,
+  meta_description text,
+  status text default 'published',
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
 -- 2. Open RLS Policies for Admin (Authenticated users)
 alter table public.images enable row level security;
 alter table public.counters enable row level security;
 alter table public.youtube_videos enable row level security;
 alter table public.course_info enable row level security;
+alter table public.blogs enable row level security;
 
 -- Policies for Tables
 CREATE POLICY "Admin CRUD images" ON public.images FOR ALL TO authenticated USING (true) WITH CHECK (true);
 CREATE POLICY "Admin CRUD counters" ON public.counters FOR ALL TO authenticated USING (true) WITH CHECK (true);
 CREATE POLICY "Admin CRUD youtube" ON public.youtube_videos FOR ALL TO authenticated USING (true) WITH CHECK (true);
 CREATE POLICY "Admin CRUD course_info" ON public.course_info FOR ALL TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Admin CRUD blogs" ON public.blogs FOR ALL TO authenticated USING (true) WITH CHECK (true);
 
 -- Allow Public READ for everything
 CREATE POLICY "Public Read images" ON public.images FOR SELECT TO anon USING (true);
 CREATE POLICY "Public Read youtube" ON public.youtube_videos FOR SELECT TO anon USING (true);
 CREATE POLICY "Public Read course_info" ON public.course_info FOR SELECT TO anon USING (true);
+CREATE POLICY "Public Read blogs" ON public.blogs FOR SELECT TO anon USING (true);
 
 -- 3. Setup Storage Policies (After creating 'nail-images' bucket)
 -- Note: Make sure to create 'nail-images' bucket and set to Public first.

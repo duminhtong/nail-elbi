@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AdminNav from '@/components/admin/AdminNav'
 import ImageManager from '@/components/admin/ImageManager'
 import YoutubeManager from '@/components/admin/YoutubeManager'
+import BlogManager from '@/components/admin/BlogManager'
 import CourseInfoEditor from '@/components/admin/CourseInfoEditor'
 
 export default function AdminDashboard() {
@@ -25,6 +26,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="student_work" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-sky-500 data-[state=active]:text-white">🎓 Tác Phẩm Học Viên</TabsTrigger>
             <TabsTrigger value="classroom" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-emerald-500 data-[state=active]:text-white">📸 Ảnh Lớp Học</TabsTrigger>
             <TabsTrigger value="youtube" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-red-600 data-[state=active]:text-white">🎬 Video YouTube</TabsTrigger>
+            <TabsTrigger value="blog" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-indigo-600 data-[state=active]:text-white">✍️ Bài Viết Blog</TabsTrigger>
             <TabsTrigger value="course_info" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white">ℹ️ Thông Tin Khóa Học</TabsTrigger>
           </TabsList>
           
@@ -45,6 +47,9 @@ export default function AdminDashboard() {
           </TabsContent>
           <TabsContent value="youtube" className="mt-0 outline-none">
              <YoutubeManager />
+          </TabsContent>
+          <TabsContent value="blog" className="mt-0 outline-none">
+             <BlogManager />
           </TabsContent>
           <TabsContent value="course_info" className="mt-0 outline-none">
              <CourseInfoEditor />

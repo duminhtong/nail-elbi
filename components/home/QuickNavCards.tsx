@@ -31,10 +31,10 @@ const cards = [
     bg: "bg-emerald-500/10"
   },
   {
-    title: "Học Viên Chia Sẻ",
-    description: "Câu chuyện từ học viên",
+    title: "Blog Làm Đẹp",
+    description: "Bí quyết & Tin tức thẩm mỹ",
     icon: MessageSquareQuote,
-    href: "/student-interviews",
+    href: "/blog",
     color: "text-amber-500",
     bg: "bg-amber-500/10"
   }

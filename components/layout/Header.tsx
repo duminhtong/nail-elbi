@@ -15,6 +15,7 @@ export default function Header() {
     { label: 'Mẫu Nail & Mi', href: '/catalogue' },
     { label: 'Học Miễn Phí', href: '/free-lessons' },
     { label: 'Lớp Học', href: '/classroom' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Thông Tin Khóa Học', href: '/course-info' },
   ]
 

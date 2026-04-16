@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, Image as ImageIcon, Video, GraduationCap, Info } from 'lucide-react'
+import { Home, Image as ImageIcon, Video, GraduationCap, Info, PenSquare } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 
 export default function BottomNav() {
@@ -15,7 +15,7 @@ export default function BottomNav() {
     { icon: Home, label: 'Trang Chủ', href: '/' },
     { icon: ImageIcon, label: 'Mẫu Đẹp', href: '/catalogue' },
     { icon: Video, label: 'Học Miễn Phí', href: '/free-lessons' },
-    { icon: GraduationCap, label: 'Lớp Học', href: '/classroom' },
+    { icon: PenSquare, label: 'Blog', href: '/blog' },
     { icon: Info, label: 'Thông Tin', href: '/course-info' },
   ]
 

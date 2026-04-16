@@ -55,3 +55,16 @@ export interface BenefitsContent {
   rights: string[];
   obligations: string[];
 }
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string | null;
+  content: string;
+  cover_image: string | null;
+  meta_title: string | null;
+  meta_description: string | null;
+  created_at: string;
+  status: 'draft' | 'published';
+}
