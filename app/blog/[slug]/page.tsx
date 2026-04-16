@@ -17,12 +17,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!post) return { title: 'Not Found' }
 
+  const p = post as any
   return {
-    title: post.meta_title || post.title,
-    description: post.meta_description || post.excerpt,
+    title: p.meta_title || p.title,
+    description: p.meta_description || p.excerpt,
     openGraph: {
-      title: post.meta_title || post.title,
-      description: post.meta_description || post.excerpt,
+      title: p.meta_title || p.title,
+      description: p.meta_description || p.excerpt,
     }
   }
 }
@@ -37,6 +38,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   if (!post) notFound()
 
+  const p = post as any
   return (
     <PageContainer>
       <div className="max-w-3xl mx-auto">
@@ -46,9 +48,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         </Link>
 
         <article className="bg-white rounded-[32px] overflow-hidden shadow-sm border border-border-soft">
-          {post.cover_image && (
+          {p.cover_image && (
             <div className="aspect-[21/9] w-full">
-              <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" />
+              <img src={p.cover_image} alt={p.title} className="w-full h-full object-cover" />
             </div>
           )}
           
@@ -56,18 +58,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <header className="mb-10 text-center">
               <div className="flex items-center justify-center gap-2 text-muted text-sm mb-4">
                 <Calendar size={16} />
-                {format(new Date(post.created_at), 'dd MMMM, yyyy', { locale: vi })}
+                {format(new Date(p.created_at), 'dd MMMM, yyyy', { locale: vi })}
               </div>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight">
-                {post.title}
+                {p.title}
               </h1>
             </header>
 
             <div className="prose prose-rose max-w-none prose-headings:font-display prose-headings:font-bold prose-p:text-muted prose-p:leading-relaxed prose-img:rounded-3xl">
-              {/* Đây là nơi hiển thị nội dung bài viết. 
-                  Vì chúng ta lưu nội dung thuần túy, tôi sẽ hiển thị nó theo các đoạn văn. 
-                  Trong tương lai bạn có thể dùng MDX hoặc Rich Text Editor */}
-              {post.content.split('\n').map((line: string, i: number) => (
+              {p.content.split('\n').map((line: string, i: number) => (
                 line.trim() ? <p key={i}>{line}</p> : <br key={i} />
               ))}
             </div>
