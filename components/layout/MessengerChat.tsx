@@ -12,7 +12,7 @@ declare global {
 export default function MessengerChat() {
   useEffect(() => {
     // Page ID của bạn - Bạn hãy thay số này bằng Page ID thật của bạn nhé
-    const PAGE_ID = "104192665042211" 
+    const PAGE_ID = "361140477601312"
 
     // Tạo phần tử div cho Facebook SDK
     const fbRoot = document.createElement('div')
@@ -27,14 +27,14 @@ export default function MessengerChat() {
     document.body.appendChild(fbCustomerChat)
 
     // Khởi tạo SDK
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       window.FB.init({
         xfbml: true,
         version: 'v18.0'
       });
     };
 
-    (function(d, s, id) {
+    (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s) as HTMLScriptElement;
@@ -42,7 +42,7 @@ export default function MessengerChat() {
       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
       fjs.parentNode?.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    
+
     return () => {
       // Dọn dẹp khi component unmount (tùy chọn)
       const root = document.getElementById('fb-root')
