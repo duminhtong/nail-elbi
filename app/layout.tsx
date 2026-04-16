@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import BottomNav from "@/components/layout/BottomNav";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
           <div className="flex-1 flex flex-col">
             {children}
           </div>
+          <Footer />
           <BottomNav />
         </div>
         <Toaster />

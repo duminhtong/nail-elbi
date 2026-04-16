@@ -7,8 +7,8 @@ import { Card, CardContent } from '@/components/ui/card'
 
 const cards = [
   {
-    title: "Mẫu Nail",
-    description: "Xem bộ sưu tập mẫu nail art",
+    title: "Nail & Mi",
+    description: "Bộ sưu tập Nail, Chân mày & Mi",
     icon: Palette,
     href: "/catalogue",
     color: "text-rose",

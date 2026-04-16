@@ -23,7 +23,7 @@ export default function HeroBanner() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lg md:text-xl text-muted mb-8 md:mb-10 max-w-2xl mx-auto font-medium"
         >
-          Nghệ Thuật Nail — Chuyên Nghiệp & Tận Tâm
+          Chuyên Nail Design — Brow Lamination — Lash Lift & Đào tạo học viên chuyên nghiệp
         </motion.p>
         
         <motion.div 
@@ -32,15 +32,15 @@ export default function HeroBanner() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
-          <Button asChild size="lg" className="w-full sm:w-auto h-14 md:h-12 bg-rose hover:bg-rose-dark text-white rounded-xl shadow-lg hover:shadow-xl transition-all text-base px-8 font-medium">
-            <Link href="/catalogue">
-              💅 Xem Mẫu Nail
+          <Button asChild size="lg" className="w-full sm:w-auto h-14 md:h-12 bg-ink hover:bg-black text-white rounded-xl shadow-lg hover:shadow-xl transition-all text-base px-8 font-medium">
+            <Link href="http://zalo.me/0901292729" target="_blank">
+              💬 Tư vấn ngay
             </Link>
           </Button>
           
-          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto h-14 md:h-12 rounded-xl border-2 border-rose text-rose hover:bg-rose/5 transition-all text-base px-8 font-medium">
-            <Link href="/course-info">
-              🎓 Đăng Ký Học
+          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto h-14 md:h-12 rounded-xl border-2 border-ink text-ink hover:bg-ink/5 transition-all text-base px-8 font-medium">
+            <Link href="/catalogue">
+              💅 Xem Mẫu Đẹp
             </Link>
           </Button>
         </motion.div>
