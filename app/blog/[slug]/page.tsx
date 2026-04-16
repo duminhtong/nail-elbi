@@ -65,11 +65,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               </h1>
             </header>
 
-            <div className="prose prose-rose max-w-none prose-headings:font-display prose-headings:font-bold prose-p:text-muted prose-p:leading-relaxed prose-img:rounded-3xl">
-              {p.content.split('\n').map((line: string, i: number) => (
-                line.trim() ? <p key={i}>{line}</p> : <br key={i} />
-              ))}
-            </div>
+            <div 
+              className="prose prose-rose max-w-none prose-headings:font-display prose-headings:font-bold prose-p:text-ink/80 prose-p:leading-relaxed prose-img:rounded-3xl prose-img:mx-auto prose-blockquote:border-l-rose prose-blockquote:bg-rose/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-2xl"
+              dangerouslySetInnerHTML={{ __html: p.content }}
+            />
           </div>
         </article>
       </div>

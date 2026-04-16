@@ -8,9 +8,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { Trash2, Plus, PenSquare, Loader2, Globe } from 'lucide-react'
+import { Trash2, Plus, PenSquare, Loader2, Globe, Image as ImageIcon } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
 import type { BlogPost } from '@/types'
+import dynamic from 'next/dynamic'
+import 'react-quill/dist/quill.snow.css'
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
 export default function BlogManager() {
   const { posts, isLoading, mutate } = useBlog()
@@ -123,13 +127,23 @@ export default function BlogManager() {
 
           <div className="space-y-2">
             <Label>Nội dung bài viết *</Label>
-            <Textarea 
-              value={currentPost?.content} 
-              onChange={e => setCurrentPost({...currentPost, content: e.target.value})}
-              placeholder="Viết nội dung bài viết tại đây..."
-              className="min-h-[300px]"
-              required
-            />
+            <div className="bg-white min-h-[400px]">
+              <ReactQuill 
+                theme="snow"
+                value={currentPost?.content || ''} 
+                onChange={content => setCurrentPost({...currentPost, content})}
+                modules={{
+                  toolbar: [
+                    [{ 'header': [1, 2, 3, false] }],
+                    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                    [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+                    ['link', 'image'],
+                    ['clean']
+                  ],
+                }}
+                className="h-[350px] mb-12"
+              />
+            </div>
           </div>
 
           <div className="p-4 bg-slate-50 rounded-xl space-y-4 border border-border-soft">
