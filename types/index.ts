@@ -1,4 +1,4 @@
-export type ImageCategory = 'nail_menu' | 'student_work' | 'classroom';
+export type ImageCategory = 'nail_menu' | 'brow_lamination' | 'lash_lift' | 'student_work' | 'classroom';
 export type YoutubeCategory = 'free_lesson' | 'student_interview';
 export type CourseInfoSection = 'pricing' | 'rules' | 'benefits';
 

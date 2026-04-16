@@ -14,7 +14,7 @@ import { useImages } from '@/lib/hooks/useImages'
 import type { ImageCategory } from '@/types'
 
 export default function CataloguePage() {
-  const [activeTab, setActiveTab] = useState<'nail_menu' | 'student_work'>('nail_menu')
+  const [activeTab, setActiveTab] = useState<'nail_menu' | 'brow_lamination' | 'lash_lift' | 'student_work'>('nail_menu')
   const [searchQuery, setSearchQuery] = useState('')
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
