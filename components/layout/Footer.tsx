@@ -1,7 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { MapPin, Phone, Facebook, MessageCircle, MessageSquare } from 'lucide-react'
+import { MapPin, Phone, MessageCircle, MessageSquare } from 'lucide-react'
+
+// Custom Facebook SVG since lucide-react version might not support it
+const FacebookIcon = ({ size = 20 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+)
 
 export default function Footer() {
   const zaloUrl = "http://zalo.me/0901292729"
@@ -23,7 +30,7 @@ export default function Footer() {
                 <MessageCircle size={20} />
               </a>
               <a href="https://facebook.com/nailelbi" target="_blank" className="p-2 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors" title="Facebook">
-                <Facebook size={20} />
+                <FacebookIcon size={20} />
               </a>
               <a href={`tel:${hotline}`} className="p-2 rounded-full bg-green-50 text-green-600 hover:bg-green-100 transition-colors" title="Gọi ngay">
                 <Phone size={20} />
