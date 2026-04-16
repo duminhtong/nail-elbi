@@ -48,7 +48,8 @@ create table public.blogs (
   meta_title text,
   meta_description text,
   status text default 'published',
-  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  updated_at timestamp with time zone default timezone('utc'::text, now())
 );
 
 -- 2. Open RLS Policies for Admin (Authenticated users)
