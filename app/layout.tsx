@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BottomNav from "@/components/layout/BottomNav";
+import MessengerChat from "@/components/layout/MessengerChat";
 import { Toaster } from "@/components/ui/toaster";
 
 const newsreader = Newsreader({ 
@@ -53,6 +54,7 @@ export default function RootLayout({
           <BottomNav />
         </div>
         <Toaster />
+        <MessengerChat />
       </body>
     </html>
   );
