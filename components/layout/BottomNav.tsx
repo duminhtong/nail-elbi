@@ -13,8 +13,8 @@ export default function BottomNav() {
 
   const items = [
     { icon: Home, label: 'Trang Chủ', href: '/' },
-    { icon: ImageIcon, label: 'Mẫu Nail', href: '/catalogue' },
-    { icon: Video, label: 'Học Nail', href: '/free-lessons' },
+    { icon: ImageIcon, label: 'Mẫu Đẹp', href: '/catalogue' },
+    { icon: Video, label: 'Học Miễn Phí', href: '/free-lessons' },
     { icon: GraduationCap, label: 'Lớp Học', href: '/classroom' },
     { icon: Info, label: 'Thông Tin', href: '/course-info' },
   ]

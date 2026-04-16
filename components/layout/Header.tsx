@@ -12,8 +12,8 @@ export default function Header() {
 
   const items = [
     { label: 'Trang Chủ', href: '/' },
-    { label: 'Mẫu Nail', href: '/catalogue' },
-    { label: 'Học Nail Miễn Phí', href: '/free-lessons' },
+    { label: 'Mẫu Nail & Mi', href: '/catalogue' },
+    { label: 'Học Miễn Phí', href: '/free-lessons' },
     { label: 'Lớp Học', href: '/classroom' },
     { label: 'Thông Tin Khóa Học', href: '/course-info' },
   ]
