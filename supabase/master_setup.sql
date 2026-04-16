@@ -11,7 +11,8 @@ create table public.images (
   category text not null,
   storage_path text not null,
   public_url text not null,
-  batch text
+  batch text,
+  constraint images_category_check check (category in ('nail_menu', 'brow_lamination', 'lash_lift', 'student_work', 'classroom'))
 );
 
 create table public.counters (
