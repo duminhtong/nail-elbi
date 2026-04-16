@@ -7,20 +7,15 @@ import PricingTable from '@/components/course-info/PricingTable'
 import RulesSection from '@/components/course-info/RulesSection'
 import BenefitsSection from '@/components/course-info/BenefitsSection'
 import Link from 'next/link'
-import { Mail, ArrowRight } from 'lucide-react'
+import { MessageCircle, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/hooks/use-toast'
 
 export default function CourseInfoPage() {
   const { toast } = useToast()
 
-  const handleCopyContact = () => {
-    navigator.clipboard.writeText("Xin chào NAIL ELBI! Tôi muốn tìm hiểu về khóa học nail. Vui lòng tư vấn giúp tôi.")
-    toast({
-      title: "✓ Đã sao chép tin nhắn!",
-      description: "Paste vào Zalo hoặc Facebook để liên hệ ngay với chúng tôi.",
-      duration: 3000,
-    })
+  const handleContact = () => {
+    window.open("http://zalo.me/0901292729", "_blank")
   }
 
   return (
@@ -39,7 +34,7 @@ export default function CourseInfoPage() {
           {/* Student Interviews Teaser */}
           <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 text-center border border-border-soft shadow-sm">
              <h3 className="font-display font-bold text-xl md:text-2xl text-ink mb-3">
-               Học viên nói gì về chúng tôi?
+                Học viên nói gì về chúng tôi?
              </h3>
              <p className="text-muted mb-6">
                Hàng trăm học viên đã tốt nghiệp và thành công với nghề Nail. Hãy nghe chia sẻ thật từ họ.
@@ -56,17 +51,17 @@ export default function CourseInfoPage() {
       {/* Sticky Mobile Contact CTA */}
       <div className="fixed bottom-[64px] left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-border-soft flex items-center justify-between md:hidden z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] pb-[calc(12px+env(safe-area-inset-bottom))]">
         <div className="text-sm font-bold text-ink pl-2">Đăng ký khóa học?</div>
-        <Button onClick={handleCopyContact} className="bg-rose hover:bg-rose-dark rounded-xl h-10 px-5 shadow-md">
-          <Mail className="w-4 h-4 mr-2" />
-          Liên hệ đăng ký
+        <Button onClick={handleContact} className="bg-rose hover:bg-rose-dark rounded-xl h-10 px-5 shadow-md">
+          <MessageCircle className="w-4 h-4 mr-2" />
+          Zalo đăng ký ngay
         </Button>
       </div>
 
       {/* Desktop Contact CTA (not sticky) */}
       <div className="hidden md:flex justify-center mb-16">
-        <Button onClick={handleCopyContact} size="lg" className="bg-rose hover:bg-rose-dark rounded-xl h-14 px-10 text-lg shadow-lg">
-          <Mail className="w-5 h-5 mr-3" />
-          Liên hệ tư vấn khóa học
+        <Button onClick={handleContact} size="lg" className="bg-rose hover:bg-rose-dark rounded-xl h-14 px-10 text-lg shadow-lg">
+          <MessageCircle className="w-5 h-5 mr-3" />
+          Liên hệ tư vấn qua Zalo
         </Button>
       </div>
     </>
