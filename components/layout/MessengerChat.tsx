@@ -9,7 +9,6 @@ export default function MessengerChat() {
     <>
       <div id="fb-root"></div>
       
-      {/* @ts-expect-error facebook specific attributes */}
       <div 
         id="fb-customer-chat" 
         className="fb-customerchat"
