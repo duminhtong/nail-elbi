@@ -12,8 +12,7 @@ export default function MessengerChat() {
       <div 
         id="fb-customer-chat" 
         className="fb-customerchat"
-        attribution="biz_inbox" 
-        page_id={PAGE_ID}
+        {...({ attribution: "biz_inbox", page_id: PAGE_ID } as any)}
       ></div>
 
       <Script id="messenger-chat" strategy="lazyOnload">
