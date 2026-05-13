@@ -21,25 +21,28 @@ export default function ImageCard({
       className="mb-2 sm:mb-3 break-inside-avoid"
     >
       <div 
-        className="group relative cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 tap-highlight-transparent"
+        className="group relative cursor-pointer p-0 bg-white shadow-premium-sm hover:shadow-premium rounded-xl overflow-hidden transition-all duration-500 tap-highlight-transparent border border-border-soft/10"
         onClick={onClick}
       >
-        <img
-          src={image.public_url}
-          alt={image.name || 'Nail Art'}
-          className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+        <div className="overflow-hidden">
+          <img
+            src={image.public_url}
+            alt={image.name || 'Nail Art'}
+            className="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+        </div>
         
-        {/* Hover/Tap Overlay */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-4">
-          <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            {image.name && <p className="font-bold text-sm sm:text-base truncate">{image.name}</p>}
-            {image.batch && <p className="text-xs sm:text-sm text-white/80 mt-0.5">{image.batch}</p>}
+        {/* Subtle Bottom Bar (instead of full overlay) */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            {image.name && <p className="font-light text-sm tracking-wide">{image.name.toUpperCase()}</p>}
+            {image.batch && <p className="text-[10px] text-white/70 uppercase tracking-widest mt-1">{image.batch}</p>}
           </div>
-          <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full transform translate-y-[-10px] group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-            <ZoomIn className="w-4 h-4 text-white" />
-          </div>
+        </div>
+        
+        <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20">
+          <ZoomIn className="w-4 h-4 text-white" />
         </div>
       </div>
     </motion.div>

@@ -20,14 +20,14 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full glass-header transition-all">
-      <div className="container mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
-        <Link href="/" className="font-display text-2xl font-bold tracking-tight text-ink">
+    <header className="sticky top-6 z-50 w-full px-4 transition-all">
+      <div className="container mx-auto max-w-7xl bg-white/90 backdrop-blur-md rounded-2xl shadow-premium px-6 md:px-8 h-16 md:h-20 flex items-center justify-between border border-white/20">
+        <Link href="/" className="font-display text-2xl md:text-3xl font-black tracking-tighter text-ink hover:text-rose transition-colors">
           ELBI BEAUTY
         </Link>
         
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
           {items.map((item) => {
             const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))
             return (
@@ -35,8 +35,10 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-rose",
-                  isActive ? "text-rose" : "text-ink/80"
+                  "text-[13px] lg:text-sm font-semibold transition-all px-4 py-2 rounded-lg",
+                  isActive 
+                    ? "text-rose font-black underline underline-offset-8 decoration-2" 
+                    : "text-muted hover:text-ink"
                 )}
               >
                 {item.label}
@@ -48,11 +50,11 @@ export default function Header() {
         <div className="flex items-center">
           <Link 
             href="/admin" 
-            className="p-2 text-muted hover:text-rose transition-colors"
+            className="p-3 rounded-xl bg-neu-dark/10 hover:bg-rose/10 text-muted hover:text-rose transition-all shadow-premium-sm"
             title="Quản trị"
             aria-label="Admin Login"
           >
-            <Lock className="w-4 h-4 md:w-5 md:h-5" />
+            <Lock className="w-5 h-5" />
           </Link>
         </div>
       </div>

@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    --background: 30 25% 97%;
-    --foreground: 0 0% 17%;
+    --background: 0 0% 98%; /* #f9f9f9 */
+    --foreground: 0 0% 10%;
   }
 
   body {
-    @apply bg-ivory text-ink font-body min-h-screen antialiased;
+    @apply bg-neu text-ink font-sans min-h-screen antialiased;
     scroll-behavior: smooth;
   }
 }

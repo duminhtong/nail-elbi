@@ -31,8 +31,8 @@ export default function ClassroomGrid() {
 
   if (!images || images.length === 0) {
     return (
-      <div className="text-center py-16 px-4 bg-white rounded-3xl border border-dashed border-border-soft">
-        <p className="text-muted text-lg">Hình ảnh lớp học sẽ sớm được cập nhật.</p>
+      <div className="text-center py-32 px-8 bg-white rounded-2xl shadow-premium-sm border border-border-soft/10">
+        <p className="text-muted text-xl font-light tracking-wide italic">Hình ảnh lớp học sẽ sớm được cập nhật.</p>
       </div>
     )
   }
@@ -44,27 +44,29 @@ export default function ClassroomGrid() {
 
   return (
     <>
-      <div className="columns-2 sm:columns-3 lg:columns-4 gap-2 sm:gap-3 lg:gap-4 w-full">
+      <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 md:gap-6 w-full">
         {images.map((image, i) => (
           <motion.div
             key={image.id}
             layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            className="mb-2 sm:mb-3 break-inside-avoid"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 md:mb-6 break-inside-avoid"
           >
             <div 
-              className="group relative cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 tap-highlight-transparent"
+              className="group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-premium-sm hover:shadow-premium border border-border-soft/10 p-0 transition-all duration-500 tap-highlight-transparent"
               onClick={() => openLightbox(i)}
             >
-              <img
-                src={image.public_url}
-                alt={image.name || 'Classroom'}
-                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="overflow-hidden">
+                <img
+                  src={image.public_url}
+                  alt={image.name || 'Classroom'}
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                 <ZoomIn className="w-8 h-8 text-white" />
               </div>
             </div>

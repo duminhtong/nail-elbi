@@ -15,47 +15,41 @@ export default function Footer() {
   const hotline = "0901292729"
 
   return (
-    <footer className="bg-white border-t border-border-soft pt-12 pb-24 md:pb-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <footer className="bg-white pt-24 pb-32 md:pb-24 border-t border-border-soft/30 mt-24">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-24">
           {/* Brand & Introduction */}
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl font-bold text-ink tracking-tight">ELBI BEAUTY</h3>
-            <p className="text-muted text-sm leading-relaxed max-w-sm">
-              Chuyên Nail Design, Brow Lamination, Lash Lift và Đào tạo học viên chuyên nghiệp tại Rạch Giá, Kiên Giang. 
-              Mang lại vẻ đẹp hoàn hảo và sự tự tin cho phái đẹp.
+          <div className="space-y-8">
+            <h3 className="font-display text-4xl font-light text-ink tracking-tighter">ELBI <span className="font-black text-rose">BEAUTY</span></h3>
+            <p className="text-muted text-base leading-relaxed max-w-sm font-light">
+              Nơi khởi nguồn cái đẹp và sự chuyên nghiệp. Chuyên Nail Design, Brow Lamination, Lash Lift và Đào tạo chuyên gia thẩm mỹ hàng đầu.
             </p>
-            <div className="flex items-center gap-4 pt-2">
-              <a href={zaloUrl} target="_blank" className="p-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors" title="Zalo">
+            <div className="flex items-center gap-4">
+              <a href={zaloUrl} target="_blank" className="w-12 h-12 flex items-center justify-center rounded-full bg-neu-dark/10 text-charcoal hover:bg-rose/10 hover:text-rose transition-all shadow-premium-sm" title="Zalo">
                 <MessageCircle size={20} />
               </a>
-              <a href="https://facebook.com/nailelbi" target="_blank" className="p-2 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors" title="Facebook">
+              <a href="https://facebook.com/nailelbi" target="_blank" className="w-12 h-12 flex items-center justify-center rounded-full bg-neu-dark/10 text-charcoal hover:bg-rose/10 hover:text-rose transition-all shadow-premium-sm" title="Facebook">
                 <FacebookIcon size={20} />
               </a>
-              <a href={`tel:${hotline}`} className="p-2 rounded-full bg-green-50 text-green-600 hover:bg-green-100 transition-colors" title="Gọi ngay">
+              <a href={`tel:${hotline}`} className="w-12 h-12 flex items-center justify-center rounded-full bg-neu-dark/10 text-charcoal hover:bg-rose/10 hover:text-rose transition-all shadow-premium-sm" title="Gọi ngay">
                 <Phone size={20} />
-              </a>
-              <a href={`sms:${hotline}`} className="p-2 rounded-full bg-orange-50 text-orange-600 hover:bg-orange-100 transition-colors" title="Gửi Tin nhắn (SMS)">
-                <MessageSquare size={20} />
               </a>
             </div>
           </div>
 
           {/* Locations */}
-          <div className="space-y-6">
-            <h4 className="font-bold text-ink uppercase tracking-wider text-sm flex items-center gap-2">
-              <MapPin size={16} className="text-rose" /> Hệ thống Chi nhánh
-            </h4>
-            <div className="space-y-4">
-              <div className="group">
-                <p className="font-semibold text-ink group-hover:text-rose transition-colors">Chi nhánh 1</p>
-                <p className="text-muted text-sm mt-1 prose-sm">
+          <div className="space-y-10">
+            <h4 className="font-semibold text-ink uppercase tracking-[0.2em] text-xs">Hệ thống chi nhánh</h4>
+            <div className="space-y-8">
+              <div className="group border-l-2 border-rose/10 pl-6 hover:border-rose transition-all">
+                <p className="font-bold text-ink text-sm">ELBI ACADEMY & SPA</p>
+                <p className="text-muted text-sm mt-2 font-light">
                   32 Lê Quý Đôn, An Bình, Rạch Giá, Kiên Giang
                 </p>
               </div>
-              <div className="group">
-                <p className="font-semibold text-ink group-hover:text-rose transition-colors">Chi nhánh 2</p>
-                <p className="text-muted text-sm mt-1 prose-sm">
+              <div className="group border-l-2 border-rose/10 pl-6 hover:border-rose transition-all">
+                <p className="font-bold text-ink text-sm">ELBI DESIGN STUDIO</p>
+                <p className="text-muted text-sm mt-2 font-light">
                   90 Phạm Hùng, Vĩnh Bảo, Rạch Giá, Kiên Giang
                 </p>
               </div>
@@ -63,33 +57,33 @@ export default function Footer() {
           </div>
 
           {/* Fast Contact */}
-          <div className="space-y-6">
-            <h4 className="font-bold text-ink uppercase tracking-wider text-sm">Liên hệ nhanh</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="mt-1 p-2 rounded-lg bg-rose/10 text-rose">
-                  <Phone size={16} />
+          <div className="space-y-10">
+            <h4 className="font-semibold text-ink uppercase tracking-[0.2em] text-xs">Liên hệ trực tiếp</h4>
+            <div className="space-y-8">
+              <div className="flex items-center gap-6 p-6 rounded-2xl bg-neu shadow-premium-sm border border-white/50">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white text-rose">
+                  <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-xs text-muted uppercase font-bold tracking-tight">Hotline / Zalo</p>
-                  <a href={`tel:${hotline}`} className="text-lg font-bold text-ink hover:text-rose transition-colors">
+                  <p className="text-[10px] text-muted uppercase font-bold tracking-widest">Hotline 24/7</p>
+                  <a href={`tel:${hotline}`} className="text-2xl font-light text-ink hover:text-rose transition-colors">
                     {hotline}
                   </a>
                 </div>
               </div>
               <Link 
                 href={zaloUrl} 
-                className="inline-flex items-center justify-center w-full bg-ink text-white py-3 rounded-xl font-bold hover:bg-black transition-all shadow-md active:scale-95"
+                className="inline-flex items-center justify-center w-full bg-charcoal-dark text-white py-5 rounded-xl font-bold tracking-widest text-sm shadow-premium hover:bg-ink transition-all active:scale-[0.98]"
               >
-                Nhận tư vấn qua Zalo
+                ĐẶT LỊCH HẸN NGAY
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border-soft mt-12 pt-8 text-center">
-          <p className="text-muted text-xs">
-            © {new Date().getFullYear()} ELBI BEAUTY. All rights reserved.
+        <div className="mt-24 pt-12 border-t border-border-soft/20 text-center">
+          <p className="text-muted/60 text-xs font-light tracking-widest">
+            © {new Date().getFullYear()} ELBI BEAUTY. Design with Premium Minimalism.
           </p>
         </div>
       </div>

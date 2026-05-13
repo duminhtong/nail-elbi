@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Newsreader, Manrope } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -7,14 +7,9 @@ import BottomNav from "@/components/layout/BottomNav";
 import MessengerChat from "@/components/layout/MessengerChat";
 import { Toaster } from "@/components/ui/toaster";
 
-const newsreader = Newsreader({ 
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-display",
-});
-
-const manrope = Manrope({
+const sans = Montserrat({ 
   subsets: ["latin", "vietnamese"],
-  variable: "--font-body",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className={`${newsreader.variable} ${manrope.variable} font-body text-ink antialiased`}>
+      <body className={`${sans.variable} font-sans text-ink antialiased bg-neu`}>
         <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] mix-blend-overlay">
           <svg className="w-full h-full">
             <filter id="noise">

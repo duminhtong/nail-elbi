@@ -9,76 +9,33 @@ export default function TabNav({
   onChange: (tab: 'nail_menu' | 'brow_lamination' | 'lash_lift' | 'student_work') => void
 }) {
   return (
-    <div className="flex justify-center mb-8">
-      <div className="inline-flex bg-white rounded-full p-1 border border-border-soft shadow-sm max-w-full overflow-x-auto mx-4 no-scrollbar">
-        <button
-          onClick={() => onChange('nail_menu')}
-          className={cn(
-            "relative px-6 sm:px-8 py-2.5 text-sm sm:text-base font-medium rounded-full transition-colors whitespace-nowrap",
-            activeTab === 'nail_menu' ? "text-white" : "text-muted hover:text-ink"
-          )}
-        >
-          {activeTab === 'nail_menu' && (
-            <motion.div
-              layoutId="activeTab"
-              className="absolute inset-0 bg-rose rounded-full"
-              initial={false}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            />
-          )}
-          <span className="relative z-10 flex items-center gap-2">💅 Mẫu Nail</span>
-        </button>
-        <button
-          onClick={() => onChange('brow_lamination')}
-          className={cn(
-            "relative px-6 sm:px-8 py-2.5 text-sm sm:text-base font-medium rounded-full transition-colors whitespace-nowrap",
-            activeTab === 'brow_lamination' ? "text-white" : "text-muted hover:text-ink"
-          )}
-        >
-          {activeTab === 'brow_lamination' && (
-            <motion.div
-              layoutId="activeTab"
-              className="absolute inset-0 bg-amber-500 rounded-full"
-              initial={false}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            />
-          )}
-          <span className="relative z-10 flex items-center gap-2">✨ Chân Mày</span>
-        </button>
-        <button
-          onClick={() => onChange('lash_lift')}
-          className={cn(
-            "relative px-6 sm:px-8 py-2.5 text-sm sm:text-base font-medium rounded-full transition-colors whitespace-nowrap",
-            activeTab === 'lash_lift' ? "text-white" : "text-muted hover:text-ink"
-          )}
-        >
-          {activeTab === 'lash_lift' && (
-            <motion.div
-              layoutId="activeTab"
-              className="absolute inset-0 bg-emerald-500 rounded-full"
-              initial={false}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            />
-          )}
-          <span className="relative z-10 flex items-center gap-2">👁️ Uốn Mi</span>
-        </button>
-        <button
-          onClick={() => onChange('student_work')}
-          className={cn(
-            "relative px-6 sm:px-8 py-2.5 text-sm sm:text-base font-medium rounded-full transition-colors whitespace-nowrap",
-            activeTab === 'student_work' ? "text-white" : "text-muted hover:text-ink"
-          )}
-        >
-          {activeTab === 'student_work' && (
-            <motion.div
-              layoutId="activeTab"
-              className="absolute inset-0 bg-sky-dark rounded-full"
-              initial={false}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            />
-          )}
-          <span className="relative z-10 flex items-center gap-2">🎓 Học Viên</span>
-        </button>
+    <div className="flex justify-center mb-16 px-4">
+      <div className="flex items-center gap-2 md:gap-12 overflow-x-auto no-scrollbar pb-4 border-b border-border-soft/20 w-full max-w-4xl justify-center">
+        {[
+          { id: 'nail_menu', label: 'NAIL DESIGN' },
+          { id: 'brow_lamination', label: 'BROW LAMINATION' },
+          { id: 'lash_lift', label: 'LASH LIFT' },
+          { id: 'student_work', label: 'STUDENT WORK' }
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => onChange(tab.id as any)}
+            className={cn(
+              "relative px-4 py-3 text-xs md:text-sm font-bold tracking-[0.2em] transition-all whitespace-nowrap",
+              activeTab === tab.id 
+                ? "text-rose" 
+                : "text-muted hover:text-ink"
+            )}
+          >
+            {tab.label}
+            {activeTab === tab.id && (
+              <motion.div 
+                layoutId="activeTab"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-rose"
+              />
+            )}
+          </button>
+        ))}
       </div>
     </div>
   )

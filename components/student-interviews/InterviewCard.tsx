@@ -15,39 +15,41 @@ export default function InterviewCard({ video, index }: { video: YoutubeVideo, i
       className="h-full"
     >
       <a href={video.youtube_url} target="_blank" rel="noopener noreferrer" className="block w-full h-full group tap-highlight-transparent">
-        <Card className="h-full border-border-soft overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl flex flex-col md:flex-row">
-          <div className="relative aspect-video w-full md:w-2/5 overflow-hidden bg-muted/20 shrink-0">
+        <Card className="h-full border border-border-soft/10 p-0 shadow-premium-sm hover:shadow-premium transition-all duration-500 rounded-xl bg-white flex flex-col md:flex-row group overflow-hidden">
+          <div className="relative aspect-video w-full md:w-2/5 overflow-hidden shrink-0">
             {video.thumbnail_url ? (
               <img 
                 src={video.thumbnail_url} 
                 alt={video.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <PlayCircle className="w-12 h-12 text-muted/50" />
+              <div className="w-full h-full bg-neu flex items-center justify-center">
+                <PlayCircle className="w-12 h-12 text-muted/30" />
               </div>
             )}
             
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform">
-                <PlayCircle className="w-6 h-6 fill-current ml-0.5" />
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="w-16 h-16 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center text-rose shadow-premium">
+                <PlayCircle className="w-10 h-10" />
               </div>
             </div>
           </div>
           
-          <CardContent className="p-4 md:p-6 flex-1 flex flex-col justify-center">
-            <h3 className="font-bold text-ink text-lg md:text-xl line-clamp-2 leading-tight group-hover:text-rose transition-colors mb-3">
+          <CardContent className="p-8 md:p-12 flex-1 flex flex-col justify-center">
+            <h3 className="font-display text-2xl md:text-3xl font-light text-ink line-clamp-2 leading-tight group-hover:text-rose transition-colors mb-6 uppercase tracking-tight">
               {video.title}
             </h3>
             {video.description && (
-              <p className="text-sm text-muted line-clamp-3 mb-4 flex-1 italic relative px-4 border-l-4 border-amber-300 bg-amber-50/50 py-2 rounded-r">
+              <div className="text-sm md:text-base text-muted line-clamp-3 mb-8 flex-1 italic relative border-l-2 border-rose/30 pl-6 font-light leading-relaxed">
                 "{video.description}"
-              </p>
+              </div>
             )}
-            <div className="mt-auto pt-2 flex items-center text-sm font-medium text-rose group-hover:text-rose-dark transition-colors">
-              <span>▶ Xem Video Interview</span>
+            <div className="mt-auto pt-2 flex items-center">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-rose transition-all group-hover:translate-x-2 inline-flex items-center">
+                XEM PHỎNG VẤN <PlayCircle size={12} className="ml-2" />
+              </span>
             </div>
           </CardContent>
         </Card>

@@ -68,16 +68,16 @@ export default function QuickNavCards() {
         {cards.map((card, idx) => (
           <motion.div key={idx} variants={itemVariants}>
             <Link href={card.href} className="block h-full tap-highlight-transparent">
-              <Card className="h-full border-none shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] bg-white rounded-2xl overflow-hidden group">
-                <CardContent className="p-5 md:p-6 flex flex-col items-center text-center justify-center h-full gap-3">
-                  <div className={`p-4 rounded-xl ${card.bg} ${card.color} group-hover:scale-110 transition-transform duration-300`}>
-                    <card.icon className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5]" />
+              <Card className="h-full border border-border-soft/10 shadow-premium-sm hover:shadow-premium transition-all duration-500 hover:-translate-y-2 bg-white rounded-2xl overflow-hidden group">
+                <CardContent className="p-8 flex flex-col items-center text-center justify-center h-full gap-6">
+                  <div className={`w-20 h-20 flex items-center justify-center rounded-full bg-neu-dark/10 ${card.color} group-hover:bg-rose group-hover:text-white transition-all duration-500`}>
+                    <card.icon className="w-10 h-10 stroke-[1.5]" />
                   </div>
-                  <div>
-                    <h3 className="font-display font-bold text-lg md:text-xl text-ink mb-1 group-hover:text-rose transition-colors">
-                      {card.title}
+                  <div className="space-y-2">
+                    <h3 className="font-display font-light text-xl text-ink group-hover:text-rose transition-colors tracking-tight">
+                      {card.title.toUpperCase()}
                     </h3>
-                    <p className="text-sm text-muted hidden sm:block">
+                    <p className="text-xs text-muted hidden sm:block font-light uppercase tracking-widest leading-loose">
                       {card.description}
                     </p>
                   </div>
