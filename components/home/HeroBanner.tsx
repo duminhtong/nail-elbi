@@ -32,15 +32,21 @@ export default function HeroBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto"
         >
-          <Button asChild size="lg" className="w-full sm:w-auto h-16 md:h-20 bg-charcoal-dark hover:bg-ink text-white rounded-xl shadow-premium transition-all text-lg px-12 font-bold tracking-wide">
+          <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-charcoal-dark hover:bg-ink text-white rounded-xl shadow-premium transition-all text-lg px-12 font-bold tracking-wide">
             <Link href="http://zalo.me/0901292729" target="_blank">
               TƯ VẤN NGAY
             </Link>
           </Button>
           
-          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto h-16 md:h-20 bg-white hover:bg-neu text-rose rounded-xl border-2 border-rose/20 shadow-premium-sm transition-all text-lg px-12 font-bold tracking-wide">
+          <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-rose hover:bg-rose-dark text-white rounded-xl shadow-premium transition-all text-lg px-12 font-bold tracking-wide">
+            <Link href="/nailbox">
+              NAILBOX BY ELBI
+            </Link>
+          </Button>
+          
+          <Button asChild variant="outline" size="lg" className="w-full md:w-auto h-16 md:h-20 bg-white hover:bg-neu text-rose rounded-xl border-2 border-rose/20 shadow-premium-sm transition-all text-lg px-12 font-bold tracking-wide">
             <Link href="/catalogue">
               BỘ SƯU TẬP
             </Link>
