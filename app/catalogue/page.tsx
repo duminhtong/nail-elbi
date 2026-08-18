@@ -45,11 +45,11 @@ export default function CataloguePage() {
       <TabNav activeTab={activeTab} onChange={setActiveTab} />
 
       {activeTab === 'student_work' && (
-        <div className="bg-gradient-to-r from-sky-soft/20 via-sky-soft/10 to-transparent border border-sky-soft/30 rounded-2xl p-6 md:p-8 text-center max-w-4xl mx-auto mb-10">
+        <div className="bg-espresso-panel border border-espresso-line rounded-2xl p-6 md:p-8 text-center max-w-4xl mx-auto mb-10">
           <h2 className="font-display text-xl md:text-2xl font-bold text-sky-900 mb-2">
             Tác Phẩm Học Viên NAIL ELBI
           </h2>
-          <p className="text-muted text-sm md:text-base mb-6">
+          <p className="text-rose-muted text-sm md:text-base mb-6">
             Bạn cũng có thể làm được điều này! 💙
           </p>
           <Button asChild size="lg" className="bg-sky-600 hover:bg-sky-700 text-white rounded-full transition-transform hover:scale-105 shadow-md">
@@ -79,8 +79,8 @@ export default function CataloguePage() {
       ) : filteredImages.length > 0 ? (
         <MasonryGrid images={filteredImages} onImageClick={openLightbox} />
       ) : (
-        <div className="text-center py-16 px-4 bg-white rounded-3xl border border-dashed border-border-soft">
-          <p className="text-muted text-lg">Không tìm thấy mẫu nail nào.</p>
+        <div className="text-center py-16 px-4 bg-espresso-panel rounded-3xl border border-dashed border-espresso-line">
+          <p className="text-rose-muted text-lg">Không tìm thấy mẫu nail nào.</p>
         </div>
       )}
 

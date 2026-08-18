@@ -68,16 +68,16 @@ export default function QuickNavCards() {
         {cards.map((card, idx) => (
           <motion.div key={idx} variants={itemVariants}>
             <Link href={card.href} className="block h-full tap-highlight-transparent">
-              <Card className="h-full border border-border-soft/10 shadow-premium-sm hover:shadow-premium transition-all duration-500 hover:-translate-y-2 bg-white rounded-2xl overflow-hidden group">
+              <Card className="h-full border border-espresso-line/10 shadow-none hover:shadow-none transition-all duration-500 hover:-translate-y-2 bg-espresso-panel rounded-2xl overflow-hidden group">
                 <CardContent className="p-8 flex flex-col items-center text-center justify-center h-full gap-6">
-                  <div className={`w-20 h-20 flex items-center justify-center rounded-full bg-neu-dark/10 ${card.color} group-hover:bg-rose group-hover:text-white transition-all duration-500`}>
+                  <div className={`w-20 h-20 flex items-center justify-center rounded-full bg-espresso-panel-dark/10 ${card.color} group-hover:bg-rose group-hover:text-white transition-all duration-500`}>
                     <card.icon className="w-10 h-10 stroke-[1.5]" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="font-display font-light text-xl text-ink group-hover:text-rose transition-colors tracking-tight">
+                    <h3 className="font-display font-light text-xl text-rose group-hover:text-rose transition-colors tracking-tight">
                       {card.title.toUpperCase()}
                     </h3>
-                    <p className="text-xs text-muted hidden sm:block font-light uppercase tracking-widest leading-loose">
+                    <p className="text-xs text-rose-muted hidden sm:block font-light uppercase tracking-widest leading-loose">
                       {card.description}
                     </p>
                   </div>

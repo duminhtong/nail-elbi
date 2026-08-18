@@ -32,14 +32,14 @@ export default function CourseInfoPage() {
           <BenefitsSection />
 
           {/* Student Interviews Teaser */}
-          <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 text-center border border-border-soft shadow-sm">
-             <h3 className="font-display font-bold text-xl md:text-2xl text-ink mb-3">
+          <div className="mt-12 bg-espresso-panel rounded-2xl p-6 md:p-8 text-center border border-espresso-line shadow-sm">
+             <h3 className="font-display font-bold text-xl md:text-2xl text-rose mb-3">
                 Học viên nói gì về chúng tôi?
              </h3>
-             <p className="text-muted mb-6">
+             <p className="text-rose-muted mb-6">
                Hàng trăm học viên đã tốt nghiệp và thành công với nghề Nail. Hãy nghe chia sẻ thật từ họ.
              </p>
-             <Button asChild variant="outline" className="rounded-xl border-rose text-rose hover:bg-rose/5">
+             <Button asChild variant="outline" className="rounded-xl border-rose text-rose hover:bg-rose/10">
                <Link href="/student-interviews">
                  Xem phỏng vấn học viên <ArrowRight className="w-4 h-4 ml-2" />
                </Link>
@@ -49,8 +49,8 @@ export default function CourseInfoPage() {
       </PageContainer>
 
       {/* Sticky Mobile Contact CTA */}
-      <div className="fixed bottom-[64px] left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-border-soft flex items-center justify-between md:hidden z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] pb-[calc(12px+env(safe-area-inset-bottom))]">
-        <div className="text-sm font-bold text-ink pl-2">Đăng ký khóa học?</div>
+      <div className="fixed bottom-[64px] left-0 right-0 p-3 bg-espresso-panel/95 backdrop-blur-md border-t border-espresso-line flex items-center justify-between md:hidden z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] pb-[calc(12px+env(safe-area-inset-bottom))]">
+        <div className="text-sm font-bold text-rose pl-2">Đăng ký khóa học?</div>
         <Button onClick={handleContact} className="bg-rose hover:bg-rose-dark rounded-xl h-10 px-5 shadow-md">
           <MessageCircle className="w-4 h-4 mr-2" />
           Zalo đăng ký ngay

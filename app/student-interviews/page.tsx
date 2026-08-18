@@ -22,11 +22,11 @@ export default function StudentInterviewsPage() {
       
       <InterviewGrid />
       
-      <div className="mt-16 sm:mt-24 text-center bg-sky-soft/10 p-8 md:p-12 rounded-3xl border border-sky-soft/30 max-w-3xl mx-auto">
-        <h3 className="font-display text-2xl md:text-3xl font-bold text-ink mb-4">
+      <div className="mt-16 sm:mt-24 text-center bg-espresso-raised/40 p-8 md:p-12 rounded-3xl border border-espresso-line max-w-3xl mx-auto">
+        <h3 className="font-display text-2xl md:text-3xl font-bold text-rose mb-4">
           Bạn cũng muốn trở thành học viên NAIL ELBI?
         </h3>
-        <p className="text-muted mb-8 text-base md:text-lg">
+        <p className="text-rose-muted mb-8 text-base md:text-lg">
           Hãy bắt đầu hành trình của bạn với chúng tôi ngay hôm nay. 
           Môi trường học tập chuyên nghiệp, tận tâm đang chờ bạn.
         </p>

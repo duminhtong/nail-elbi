@@ -42,12 +42,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   return (
     <PageContainer>
       <div className="max-w-3xl mx-auto">
-        <Link href="/blog" className="inline-flex items-center text-sm text-muted hover:text-rose mb-8 transition-colors group">
+        <Link href="/blog" className="inline-flex items-center text-sm text-rose-muted hover:text-rose mb-8 transition-colors group">
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
           Quay lại danh sách
         </Link>
 
-        <article className="bg-white rounded-[32px] overflow-hidden shadow-sm border border-border-soft">
+        <article className="bg-espresso-panel rounded-[32px] overflow-hidden shadow-sm border border-espresso-line">
           {p.cover_image && (
             <div className="aspect-[21/9] w-full">
               <img src={p.cover_image} alt={p.title} className="w-full h-full object-cover" />
@@ -56,17 +56,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           
           <div className="p-8 md:p-12">
             <header className="mb-10 text-center">
-              <div className="flex items-center justify-center gap-2 text-muted text-sm mb-4">
+              <div className="flex items-center justify-center gap-2 text-rose-muted text-sm mb-4">
                 <Calendar size={16} />
                 {format(new Date(p.created_at), 'dd MMMM, yyyy', { locale: vi })}
               </div>
-              <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight">
+              <h1 className="font-display text-3xl md:text-5xl font-bold text-rose leading-tight">
                 {p.title}
               </h1>
             </header>
 
             <div 
-              className="prose prose-rose max-w-none prose-headings:font-display prose-headings:font-bold prose-p:text-ink/80 prose-p:leading-relaxed prose-img:rounded-3xl prose-img:mx-auto prose-blockquote:border-l-rose prose-blockquote:bg-rose/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-2xl"
+              className="prose prose-rose max-w-none prose-headings:font-display prose-headings:font-bold prose-p:text-rose/80 prose-p:leading-relaxed prose-img:rounded-3xl prose-img:mx-auto prose-blockquote:border-l-rose prose-blockquote:bg-rose/10 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-2xl"
               dangerouslySetInnerHTML={{ __html: p.content }}
             />
           </div>

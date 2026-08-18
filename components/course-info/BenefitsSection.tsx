@@ -20,10 +20,10 @@ export default function BenefitsSection() {
   const content = courseInfo.content as BenefitsContent
 
   return (
-    <Accordion type="single" defaultValue="benefits" collapsible className="w-full bg-white rounded-2xl shadow-premium-sm border border-border-soft/10 overflow-hidden mb-12">
+    <Accordion type="single" defaultValue="benefits" collapsible className="w-full bg-espresso-panel rounded-2xl shadow-none border border-espresso-line/10 overflow-hidden mb-12">
       <AccordionItem value="benefits" className="border-none">
-        <AccordionTrigger className="px-10 py-8 hover:no-underline hover:bg-neu/50 transition-colors">
-          <h2 className="font-display font-light text-2xl md:text-3xl text-ink text-left tracking-tight">
+        <AccordionTrigger className="px-10 py-8 hover:no-underline hover:bg-espresso-panel/50 transition-colors">
+          <h2 className="font-display font-light text-2xl md:text-3xl text-rose text-left tracking-tight">
             {content.title.toUpperCase()}
           </h2>
         </AccordionTrigger>
@@ -31,7 +31,7 @@ export default function BenefitsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             
             {/* Rights */}
-            <div className="bg-white p-8 rounded-xl border border-border-soft/20">
+            <div className="bg-espresso-panel p-8 rounded-xl border border-espresso-line/20">
               <div className="flex items-center gap-4 mb-8 text-rose font-light uppercase tracking-[0.2em] text-xs">
                 <Star className="w-5 h-5 fill-rose" />
                 <h3>Quyền lợi học viên</h3>
@@ -40,15 +40,15 @@ export default function BenefitsSection() {
                 {content.rights?.map((item, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
                      <span className="w-1.5 h-1.5 rounded-full bg-rose mt-1.5 shrink-0" />
-                     <span className="text-muted text-sm md:text-base leading-relaxed font-light">{item}</span>
+                     <span className="text-rose-muted text-sm md:text-base leading-relaxed font-light">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Obligations */}
-            <div className="bg-white p-8 rounded-xl border border-border-soft/20">
-              <div className="flex items-center gap-4 mb-8 text-charcoal font-light uppercase tracking-[0.2em] text-xs">
+            <div className="bg-espresso-panel p-8 rounded-xl border border-espresso-line/20">
+              <div className="flex items-center gap-4 mb-8 text-rose-muted font-light uppercase tracking-[0.2em] text-xs">
                 <ClipboardList className="w-5 h-5" />
                 <h3>Nghĩa vụ học viên</h3>
               </div>
@@ -56,7 +56,7 @@ export default function BenefitsSection() {
                 {content.obligations?.map((item, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
                      <span className="w-1.5 h-1.5 rounded-full bg-charcoal mt-1.5 shrink-0" />
-                     <span className="text-muted text-sm md:text-base leading-relaxed font-light">{item}</span>
+                     <span className="text-rose-muted text-sm md:text-base leading-relaxed font-light">{item}</span>
                   </li>
                 ))}
               </ul>

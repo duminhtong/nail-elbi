@@ -4,22 +4,27 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* #f9f9f9 */
-    --foreground: 0 0% 10%;
+    --background: 12 24% 6%;
+    --foreground: 18 40% 86%;
   }
 
+  html { scroll-behavior: smooth; }
+
   body {
-    @apply bg-neu text-ink font-sans min-h-screen antialiased;
-    scroll-behavior: smooth;
+    @apply bg-espresso text-rose-100 font-sans min-h-screen antialiased;
+    background-image: radial-gradient(circle at 80% 0%, rgba(59,33,29,.3), transparent 28%), linear-gradient(180deg, #120c0b, #17100e 55%, #0d0908);
   }
+
+  ::selection { background: #d4382f; color: #f6d9d2; }
+}
+
+@layer components {
+  .public-surface { @apply border border-espresso-line bg-espresso-panel; }
+  .editorial-kicker { @apply text-[10px] uppercase tracking-[0.24em] text-rose-muted; }
+  .editorial-rule { @apply border-t border-espresso-line; }
 }
 
 @layer utilities {
-  .body-scroll-lock {
-    @apply overflow-hidden;
-  }
-  
-  .glass-header {
-    @apply bg-white/80 backdrop-blur-md border-b border-border-soft;
-  }
+  .body-scroll-lock { @apply overflow-hidden; }
+  .glass-header { @apply border-b border-espresso-line bg-espresso/90 backdrop-blur-md; }
 }

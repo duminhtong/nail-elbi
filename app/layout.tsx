@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className={`${sans.variable} font-sans text-ink antialiased bg-neu`}>
+      <body className={`${sans.variable} font-sans text-rose antialiased bg-espresso-panel`}>
         <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] mix-blend-overlay">
           <svg className="w-full h-full">
             <filter id="noise">

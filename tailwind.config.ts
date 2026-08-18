@@ -10,23 +10,33 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-        neu: {
-          DEFAULT: '#f9f9f9',
-          light: '#ffffff',
-          dark: '#e2e2e2',
+        espresso: {
+          DEFAULT: '#120c0b',
+          panel: '#1b1110',
+          raised: '#281917',
+          dark: '#0d0908',
+          line: '#704a44',
         },
         rose: {
-          DEFAULT: '#b76e79',
-          dark: '#8a4853',
-          light: '#ffd9dd',
+          DEFAULT: '#e6c1b8',
+          dark: '#c98d84',
+          light: '#f3d5ce',
+          100: '#f0d0c8',
+        },
+        'rose-muted': '#bf9188',
+        red: '#d4382f',
+        neu: {
+          DEFAULT: '#17100e',
+          light: '#281917',
+          dark: '#0d0908',
         },
         charcoal: {
-          DEFAULT: '#5f5e5e',
-          dark: '#1a1c1c',
+          DEFAULT: '#5f4540',
+          dark: '#1a0f0e',
         },
-        ink: '#1a1c1c',
-        muted: '#524345',
-        'border-soft': '#d7c1c3',
+        ink: '#f0d0c8',
+        muted: '#bf9188',
+        'border-soft': '#704a44',
   		},
   		boxShadow: {
   			'premium': '0 12px 40px rgba(26, 26, 26, 0.06)',

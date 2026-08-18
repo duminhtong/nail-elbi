@@ -136,7 +136,7 @@ export default function Lightbox({
                 {image.name && <h4 className="text-white font-bold text-lg mb-1">{image.name}</h4>}
                 {image.batch && <p className="text-white/70 text-sm mb-3">{image.batch}</p>}
                 
-                <Button asChild size="sm" className="bg-white text-black hover:bg-gray-200 rounded-full px-6">
+                <Button asChild size="sm" className="bg-espresso-panel text-black hover:bg-gray-200 rounded-full px-6">
                   <Link href="/course-info">
                     Xem khóa học →
                   </Link>
