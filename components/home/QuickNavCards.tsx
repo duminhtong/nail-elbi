@@ -58,6 +58,16 @@ const itemVariants = {
 export default function QuickNavCards() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
+      <Link href="/gel-x-workshop" className="group mx-auto mb-8 block max-w-5xl border border-espresso-line bg-espresso-panel p-6 transition-colors hover:border-red md:p-8">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="editorial-kicker mb-3">Workshop / Education</p>
+            <h2 className="font-display text-3xl font-light tracking-[-0.05em] text-rose md:text-5xl">GEL X <span className="text-red">1 NGÀY</span></h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-rose-muted">Học là ứng dụng được salon — xem nội dung, kỹ thuật và thông tin workshop.</p>
+          </div>
+          <span className="inline-flex items-center border border-red bg-red px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] text-rose-light transition-colors group-hover:bg-rose group-hover:text-espresso">Truy cập khóa học Gel X ↗</span>
+        </div>
+      </Link>
       <motion.div
         variants={containerVariants}
         initial="hidden"
