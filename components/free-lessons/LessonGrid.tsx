@@ -15,7 +15,7 @@ export default function LessonGrid() {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="flex flex-col gap-3 rounded-2xl overflow-hidden bg-white shadow-sm border border-border-soft">
+          <div key={i} className="flex flex-col gap-3 rounded-2xl overflow-hidden bg-espresso-panel shadow-sm border border-espresso-line">
             <Skeleton className="w-full aspect-video" />
             <div className="p-4 space-y-3">
               <Skeleton className="w-3/4 h-5" />
@@ -30,8 +30,8 @@ export default function LessonGrid() {
 
   if (!videos || videos.length === 0) {
     return (
-      <div className="text-center py-16 px-4 bg-white rounded-3xl border border-dashed border-border-soft">
-        <p className="text-muted text-lg">Chưa có video nào. Vui lòng quay lại sau!</p>
+      <div className="text-center py-16 px-4 bg-espresso-panel rounded-3xl border border-dashed border-espresso-line">
+        <p className="text-rose-muted text-lg">Chưa có video nào. Vui lòng quay lại sau!</p>
       </div>
     )
   }

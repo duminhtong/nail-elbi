@@ -108,16 +108,16 @@ export default function SizingGuide() {
   }
 
   return (
-    <section id="sizing-guide" className="py-16 md:py-24 border-t border-border-soft/10">
+    <section id="sizing-guide" className="py-16 md:py-24 border-t border-espresso-line/10">
       <div className="max-w-4xl mx-auto px-4">
         
         {/* Title */}
         <div className="text-center mb-16">
-          <span className="text-[10px] font-bold tracking-[0.3em] text-rose uppercase bg-rose/5 px-4 py-1.5 rounded-full">HƯỚNG DẪN</span>
-          <h2 className="font-display text-3xl md:text-5xl font-light text-ink mt-4 uppercase tracking-tight">
+          <span className="text-[10px] font-bold tracking-[0.3em] text-rose uppercase bg-rose/10 px-4 py-1.5 rounded-full">HƯỚNG DẪN</span>
+          <h2 className="font-display text-3xl md:text-5xl font-light text-rose mt-4 uppercase tracking-tight">
             Đo Size & Chọn Form Móng
           </h2>
-          <p className="text-sm text-muted max-w-lg mx-auto mt-4 font-light leading-relaxed">
+          <p className="text-sm text-rose-muted max-w-lg mx-auto mt-4 font-light leading-relaxed">
             Sở hữu bộ Nailbox thiết kế riêng khớp hoàn hảo với phom móng tự nhiên của bạn chỉ trong vài bước đơn giản.
           </p>
         </div>
@@ -126,7 +126,7 @@ export default function SizingGuide() {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <span className="w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-display text-sm">1</span>
-            <h3 className="font-display text-xl font-medium text-ink uppercase tracking-wider">CHỌN FORM MÓNG BẠN THÍCH</h3>
+            <h3 className="font-display text-xl font-medium text-rose uppercase tracking-wider">CHỌN FORM MÓNG BẠN THÍCH</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -136,20 +136,20 @@ export default function SizingGuide() {
                 onClick={() => setSelectedForm(form.name)}
                 className={`p-6 rounded-xl border cursor-pointer transition-all duration-300 ${
                   selectedForm === form.name 
-                    ? 'border-rose bg-rose/[0.02] shadow-premium-sm' 
-                    : 'border-border-soft/20 bg-white hover:border-muted'
+                    ? 'border-rose bg-rose/[0.02] shadow-none'
+                    : 'border-espresso-line/20 bg-espresso-panel hover:border-muted'
                 }`}
               >
                 <div className="flex justify-between items-center mb-3">
-                  <h4 className="font-medium text-ink text-base tracking-tight">{form.name}</h4>
+                  <h4 className="font-medium text-rose text-base tracking-tight">{form.name}</h4>
                   {selectedForm === form.name && (
                     <span className="w-5 h-5 rounded-full bg-rose text-white flex items-center justify-center shadow-sm">
                       <Check size={12} strokeWidth={3} />
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-muted font-light leading-relaxed mb-2">{form.description}</p>
-                <p className="text-[10px] text-ink/60 font-light italic">
+                <p className="text-xs text-rose-muted font-light leading-relaxed mb-2">{form.description}</p>
+                <p className="text-[10px] text-rose/60 font-light italic">
                   <span className="font-bold text-rose/80 not-italic mr-1">Đặc điểm:</span> {form.features}
                 </p>
               </div>
@@ -161,17 +161,17 @@ export default function SizingGuide() {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <span className="w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-display text-sm">2</span>
-            <h3 className="font-display text-xl font-medium text-ink uppercase tracking-wider">HƯỚNG DẪN CHỤP ẢNH ĐO SIZE</h3>
+            <h3 className="font-display text-xl font-medium text-rose uppercase tracking-wider">HƯỚNG DẪN CHỤP ẢNH ĐO SIZE</h3>
           </div>
 
-          <div className="bg-neu/20 border border-border-soft/10 rounded-xl p-8 md:p-10">
+          <div className="bg-espresso-raised/30 border border-espresso-line/10 rounded-xl p-8 md:p-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-rose/10 text-rose flex items-center justify-center text-xs shrink-0 font-bold">A</div>
                   <div>
-                    <h5 className="font-medium text-ink text-sm uppercase tracking-wider mb-1">Chuẩn bị vật mẫu quy đổi</h5>
-                    <p className="text-xs text-muted font-light leading-relaxed">
+                    <h5 className="font-medium text-rose text-sm uppercase tracking-wider mb-1">Chuẩn bị vật mẫu quy đổi</h5>
+                    <p className="text-xs text-rose-muted font-light leading-relaxed">
                       Đặt 1 chiếc thẻ ATM/thẻ CCCD cũ, thước kẻ hoặc một đồng xu cạnh bàn tay của bạn để hệ thống nhận diện tỷ lệ quy đổi chính xác.
                     </p>
                   </div>
@@ -180,8 +180,8 @@ export default function SizingGuide() {
                 <div className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-rose/10 text-rose flex items-center justify-center text-xs shrink-0 font-bold">B</div>
                   <div>
-                    <h5 className="font-medium text-ink text-sm uppercase tracking-wider mb-1">Đặt bàn tay phẳng</h5>
-                    <p className="text-xs text-muted font-light leading-relaxed">
+                    <h5 className="font-medium text-rose text-sm uppercase tracking-wider mb-1">Đặt bàn tay phẳng</h5>
+                    <p className="text-xs text-rose-muted font-light leading-relaxed">
                       Đặt tay áp sát thẳng trên mặt bàn phẳng sáng màu (sạch sẽ), xòe các ngón tay tự nhiên, không khum tay hay gập ngón tay.
                     </p>
                   </div>
@@ -190,20 +190,20 @@ export default function SizingGuide() {
                 <div className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-rose/10 text-rose flex items-center justify-center text-xs shrink-0 font-bold">C</div>
                   <div>
-                    <h5 className="font-medium text-ink text-sm uppercase tracking-wider mb-1">Chụp ảnh góc 90 độ</h5>
-                    <p className="text-xs text-muted font-light leading-relaxed">
+                    <h5 className="font-medium text-rose text-sm uppercase tracking-wider mb-1">Chụp ảnh góc 90 độ</h5>
+                    <p className="text-xs text-rose-muted font-light leading-relaxed">
                       Đưa camera điện thoại song song trực diện chính giữa bàn tay (góc 90 độ từ trên xuống), đảm bảo ảnh rõ nét và không bị lóa sáng hay bóng mờ.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="border border-dashed border-border-soft/30 rounded-lg p-6 bg-white flex flex-col justify-center items-center text-center">
-                <div className="w-32 h-32 border border-rose/20 rounded-full flex items-center justify-center bg-rose/[0.01] mb-4">
+              <div className="border border-dashed border-espresso-line/30 rounded-lg p-6 bg-espresso-panel flex flex-col justify-center items-center text-center">
+                <div className="w-32 h-32 border border-espresso-line rounded-full flex items-center justify-center bg-rose/[0.01] mb-4">
                   <Star className="w-16 h-16 text-rose/30 fill-rose/[0.02]" />
                 </div>
-                <h6 className="text-xs font-semibold text-ink uppercase tracking-widest mb-1">Ảnh chụp chuẩn xác</h6>
-                <p className="text-[10px] text-muted font-light max-w-xs leading-normal">
+                <h6 className="text-xs font-semibold text-rose uppercase tracking-widest mb-1">Ảnh chụp chuẩn xác</h6>
+                <p className="text-[10px] text-rose-muted font-light max-w-xs leading-normal">
                   Chụp đủ toàn bộ bàn tay kèm thước/vật quy chiếu nằm ngay sát cạnh bàn tay trên cùng một mặt phẳng.
                 </p>
               </div>
@@ -215,10 +215,10 @@ export default function SizingGuide() {
         <div>
           <div className="flex items-center gap-3 mb-8">
             <span className="w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center font-display text-sm">3</span>
-            <h3 className="font-display text-xl font-medium text-ink uppercase tracking-wider">TẢI ẢNH LÊN & GỬI YÊU CẦU</h3>
+            <h3 className="font-display text-xl font-medium text-rose uppercase tracking-wider">TẢI ẢNH LÊN & GỬI YÊU CẦU</h3>
           </div>
 
-          <div className="bg-white border border-border-soft/10 rounded-xl p-8 shadow-premium-sm">
+          <div className="bg-espresso-panel border border-espresso-line/10 rounded-xl p-8 shadow-none">
             <div className="flex flex-col items-center">
               
               <input 
@@ -236,13 +236,13 @@ export default function SizingGuide() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onClick={() => fileInputRef.current?.click()}
-                    className="w-full py-16 border-2 border-dashed border-border-soft/30 hover:border-rose rounded-xl bg-neu/[0.05] cursor-pointer flex flex-col items-center justify-center group transition-colors duration-300"
+                    className="w-full py-16 border-2 border-dashed border-espresso-line/30 hover:border-rose rounded-xl bg-espresso-panel/[0.05] cursor-pointer flex flex-col items-center justify-center group transition-colors duration-300"
                   >
-                    <div className="w-16 h-16 rounded-full bg-neu-dark/10 flex items-center justify-center text-muted group-hover:bg-rose group-hover:text-white transition-all duration-300 mb-4">
+                    <div className="w-16 h-16 rounded-full bg-espresso-panel-dark/10 flex items-center justify-center text-rose-muted group-hover:bg-rose group-hover:text-white transition-all duration-300 mb-4">
                       <Upload size={24} />
                     </div>
-                    <p className="text-sm font-medium text-ink">Bấm vào đây để chọn ảnh chụp tay</p>
-                    <p className="text-xs text-muted font-light mt-2">Hỗ trợ định dạng JPG, PNG hoặc HEIC lên tới 10MB</p>
+                    <p className="text-sm font-medium text-rose">Bấm vào đây để chọn ảnh chụp tay</p>
+                    <p className="text-xs text-rose-muted font-light mt-2">Hỗ trợ định dạng JPG, PNG hoặc HEIC lên tới 10MB</p>
                   </motion.div>
                 ) : (
                   <motion.div 
@@ -252,7 +252,7 @@ export default function SizingGuide() {
                     className="w-full flex flex-col items-center"
                   >
                     {/* Visual Preview Container with helper alignment guide overlay */}
-                    <div className="relative max-w-md w-full aspect-[4/3] rounded-xl overflow-hidden border border-border-soft/20 bg-neu flex items-center justify-center">
+                    <div className="relative max-w-md w-full aspect-[4/3] rounded-xl overflow-hidden border border-espresso-line/20 bg-espresso-panel flex items-center justify-center">
                       <img 
                         src={previewUrl} 
                         alt="Hand preview" 
@@ -282,7 +282,7 @@ export default function SizingGuide() {
                         <Button 
                           onClick={handleUpload}
                           disabled={uploading}
-                          className="bg-charcoal hover:bg-ink text-white font-bold h-12 px-8 rounded-lg shadow-premium text-xs tracking-wider uppercase"
+                          className="bg-charcoal hover:bg-ink text-white font-bold h-12 px-8 rounded-lg shadow-none text-xs tracking-wider uppercase"
                         >
                           {uploading ? (
                             <>
@@ -302,7 +302,7 @@ export default function SizingGuide() {
                         variant="outline" 
                         onClick={handleReset}
                         disabled={uploading}
-                        className="h-12 border-border-soft/20 text-ink text-xs font-bold px-6 rounded-lg uppercase tracking-wider"
+                        className="h-12 border-espresso-line/20 text-rose text-xs font-bold px-6 rounded-lg uppercase tracking-wider"
                       >
                         Chọn ảnh khác
                       </Button>
@@ -317,16 +317,16 @@ export default function SizingGuide() {
                   <motion.div 
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="w-full mt-10 border-t border-border-soft/10 pt-8"
+                    className="w-full mt-10 border-t border-espresso-line/10 pt-8"
                   >
-                    <h5 className="font-bold text-xs uppercase tracking-widest text-ink mb-6 text-center">Tóm tắt yêu cầu của bạn:</h5>
-                    <div className="flex flex-col sm:flex-row justify-between items-center p-5 rounded-lg bg-neu/10 border border-border-soft/10 mb-8 gap-4">
+                    <h5 className="font-bold text-xs uppercase tracking-widest text-rose mb-6 text-center">Tóm tắt yêu cầu của bạn:</h5>
+                    <div className="flex flex-col sm:flex-row justify-between items-center p-5 rounded-lg bg-espresso-panel/10 border border-espresso-line/10 mb-8 gap-4">
                       <div className="text-center sm:text-left">
-                        <p className="text-xs text-muted font-light uppercase tracking-widest">Phom móng lựa chọn</p>
-                        <p className="text-base font-semibold text-ink mt-1">{selectedForm}</p>
+                        <p className="text-xs text-rose-muted font-light uppercase tracking-widest">Phom móng lựa chọn</p>
+                        <p className="text-base font-semibold text-rose mt-1">{selectedForm}</p>
                       </div>
                       <div className="text-center sm:text-right">
-                        <p className="text-xs text-muted font-light uppercase tracking-widest">Ảnh kích thước tay</p>
+                        <p className="text-xs text-rose-muted font-light uppercase tracking-widest">Ảnh kích thước tay</p>
                         <p className="text-sm font-semibold mt-1">
                           {uploadedUrl ? (
                             <a href={uploadedUrl} target="_blank" rel="noopener noreferrer" className="text-rose hover:underline font-bold">
@@ -343,10 +343,10 @@ export default function SizingGuide() {
                       <Button 
                         asChild 
                         disabled={!uploadedUrl}
-                        className={`w-full sm:w-auto h-14 px-10 rounded-xl font-bold tracking-widest text-xs uppercase shadow-premium transition-all duration-300 ${
+                        className={`w-full sm:w-auto h-14 px-10 rounded-xl font-bold tracking-widest text-xs uppercase shadow-none transition-all duration-300 ${
                           uploadedUrl 
                             ? 'bg-rose hover:bg-rose-dark text-white cursor-pointer' 
-                            : 'bg-muted text-muted/60 cursor-not-allowed opacity-50'
+                            : 'bg-muted text-rose-muted/60 cursor-not-allowed opacity-50'
                         }`}
                       >
                         {uploadedUrl ? (
@@ -359,7 +359,7 @@ export default function SizingGuide() {
                           </span>
                         )}
                       </Button>
-                      <p className="text-[10px] text-muted font-light mt-3 text-center max-w-sm leading-normal">
+                      <p className="text-[10px] text-rose-muted font-light mt-3 text-center max-w-sm leading-normal">
                         * Bấm gửi sẽ mở Zalo của Nail Elbi và tự động điền yêu cầu kèm liên kết ảnh đo size tay của bạn.
                       </p>
                     </div>

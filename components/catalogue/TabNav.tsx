@@ -10,7 +10,7 @@ export default function TabNav({
 }) {
   return (
     <div className="flex justify-center mb-16 px-4">
-      <div className="flex items-center gap-2 md:gap-12 overflow-x-auto no-scrollbar pb-4 border-b border-border-soft/20 w-full max-w-4xl justify-center">
+      <div className="flex items-center gap-2 md:gap-12 overflow-x-auto no-scrollbar pb-4 border-b border-espresso-line/20 w-full max-w-4xl justify-center">
         {[
           { id: 'nail_menu', label: 'NAIL DESIGN' },
           { id: 'brow_lamination', label: 'BROW LAMINATION' },
@@ -24,7 +24,7 @@ export default function TabNav({
               "relative px-4 py-3 text-xs md:text-sm font-bold tracking-[0.2em] transition-all whitespace-nowrap",
               activeTab === tab.id 
                 ? "text-rose" 
-                : "text-muted hover:text-ink"
+                : "text-rose-muted hover:text-rose"
             )}
           >
             {tab.label}

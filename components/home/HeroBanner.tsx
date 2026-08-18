@@ -1,57 +1,44 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
 export default function HeroBanner() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-24 md:py-32 lg:py-48 rounded-b-[4rem] shadow-premium-sm">
+    <section className="relative w-full overflow-hidden bg-espresso-panel py-24 md:py-32 lg:py-48 rounded-b-[4rem] shadow-none">
       <div className="container px-4 mx-auto text-center relative z-10">
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl font-light text-ink mb-6 md:mb-10 tracking-tighter"
+        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-light text-rose mb-6 md:mb-10 tracking-tighter"
         >
           ELBI <span className="font-black text-rose">BEAUTY</span>
-        </motion.h1>
+        </h1>
         
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-3xl text-muted mb-12 md:mb-20 max-w-3xl mx-auto font-light leading-relaxed"
+        <p className="text-xl md:text-3xl text-rose-muted mb-12 md:mb-20 max-w-3xl mx-auto font-light leading-relaxed"
         >
           Nail Design — Brow Lamination — Lash Lift
           <br />
-          <span className="font-medium text-ink/80 italic">& Đào tạo chuyên gia thẩm mỹ thế hệ mới</span>
-        </motion.p>
+          <span className="font-medium text-rose/80 italic">& Đào tạo chuyên gia thẩm mỹ thế hệ mới</span>
+        </p>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto"
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto"
         >
-          <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-charcoal-dark hover:bg-ink text-white rounded-xl shadow-premium transition-all text-lg px-12 font-bold tracking-wide">
+          <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-charcoal-dark hover:bg-ink text-white rounded-xl shadow-none transition-all text-lg px-12 font-bold tracking-wide">
             <Link href="http://zalo.me/0901292729" target="_blank">
               TƯ VẤN NGAY
             </Link>
           </Button>
           
-          <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-rose hover:bg-rose-dark text-white rounded-xl shadow-premium transition-all text-lg px-12 font-bold tracking-wide">
+          <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-rose hover:bg-rose-dark text-white rounded-xl shadow-none transition-all text-lg px-12 font-bold tracking-wide">
             <Link href="/nailbox">
               NAILBOX BY ELBI
             </Link>
           </Button>
           
-          <Button asChild variant="outline" size="lg" className="w-full md:w-auto h-16 md:h-20 bg-white hover:bg-neu text-rose rounded-xl border-2 border-rose/20 shadow-premium-sm transition-all text-lg px-12 font-bold tracking-wide">
+          <Button asChild variant="outline" size="lg" className="w-full md:w-auto h-16 md:h-20 bg-espresso-panel hover:bg-espresso-panel text-rose rounded-xl border-2 border-espresso-line shadow-none transition-all text-lg px-12 font-bold tracking-wide">
             <Link href="/catalogue">
               BỘ SƯU TẬP
             </Link>
           </Button>
-        </motion.div>
+        </div>
       </div>
       
       {/* Editorial Decorative Details */}

@@ -15,7 +15,7 @@ export default function InterviewGrid() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
         {[...Array(4)].map((_, i) => (
-          <div key={i} className="flex flex-col md:flex-row gap-0 rounded-2xl overflow-hidden bg-white shadow-sm border border-border-soft">
+          <div key={i} className="flex flex-col md:flex-row gap-0 rounded-2xl overflow-hidden bg-espresso-panel shadow-sm border border-espresso-line">
             <Skeleton className="w-full md:w-2/5 aspect-video" />
             <div className="p-6 space-y-3 flex-1 flex flex-col justify-center">
               <Skeleton className="w-3/4 h-6" />
@@ -29,8 +29,8 @@ export default function InterviewGrid() {
 
   if (!videos || videos.length === 0) {
     return (
-      <div className="text-center py-16 px-4 bg-white rounded-3xl border border-dashed border-border-soft max-w-3xl mx-auto">
-        <p className="text-muted text-lg">Video phỏng vấn sẽ sớm được cập nhật.</p>
+      <div className="text-center py-16 px-4 bg-espresso-panel rounded-3xl border border-dashed border-espresso-line max-w-3xl mx-auto">
+        <p className="text-rose-muted text-lg">Video phỏng vấn sẽ sớm được cập nhật.</p>
       </div>
     )
   }

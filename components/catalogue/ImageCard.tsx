@@ -21,7 +21,7 @@ export default function ImageCard({
       className="mb-2 sm:mb-3 break-inside-avoid"
     >
       <div 
-        className="group relative cursor-pointer p-0 bg-white shadow-premium-sm hover:shadow-premium rounded-xl overflow-hidden transition-all duration-500 tap-highlight-transparent border border-border-soft/10"
+        className="group relative cursor-pointer p-0 bg-espresso-panel shadow-none hover:shadow-none rounded-xl overflow-hidden transition-all duration-500 tap-highlight-transparent border border-espresso-line/10"
         onClick={onClick}
       >
         <div className="overflow-hidden">
@@ -41,7 +41,7 @@ export default function ImageCard({
           </div>
         </div>
         
-        <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/20">
+        <div className="absolute top-4 right-4 bg-espresso-panel/10 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-espresso-line">
           <ZoomIn className="w-4 h-4 text-white" />
         </div>
       </div>

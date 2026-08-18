@@ -31,8 +31,8 @@ export default function ClassroomGrid() {
 
   if (!images || images.length === 0) {
     return (
-      <div className="text-center py-32 px-8 bg-white rounded-2xl shadow-premium-sm border border-border-soft/10">
-        <p className="text-muted text-xl font-light tracking-wide italic">Hình ảnh lớp học sẽ sớm được cập nhật.</p>
+      <div className="text-center py-32 px-8 bg-espresso-panel rounded-2xl shadow-none border border-espresso-line/10">
+        <p className="text-rose-muted text-xl font-light tracking-wide italic">Hình ảnh lớp học sẽ sớm được cập nhật.</p>
       </div>
     )
   }
@@ -55,7 +55,7 @@ export default function ClassroomGrid() {
             className="mb-4 md:mb-6 break-inside-avoid"
           >
             <div 
-              className="group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-premium-sm hover:shadow-premium border border-border-soft/10 p-0 transition-all duration-500 tap-highlight-transparent"
+              className="group relative cursor-pointer overflow-hidden rounded-xl bg-espresso-panel shadow-none hover:shadow-none border border-espresso-line/10 p-0 transition-all duration-500 tap-highlight-transparent"
               onClick={() => openLightbox(i)}
             >
               <div className="overflow-hidden">
