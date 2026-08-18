@@ -51,7 +51,7 @@ export default function CourseInfoPage() {
       {/* Sticky Mobile Contact CTA */}
       <div className="fixed bottom-[64px] left-0 right-0 p-3 bg-espresso-panel/95 backdrop-blur-md border-t border-espresso-line flex items-center justify-between md:hidden z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] pb-[calc(12px+env(safe-area-inset-bottom))]">
         <div className="text-sm font-bold text-rose pl-2">Đăng ký khóa học?</div>
-        <Button onClick={handleContact} className="bg-rose hover:bg-rose-dark rounded-xl h-10 px-5 shadow-md">
+        <Button onClick={handleContact} className="bg-rose text-espresso hover:bg-rose-dark hover:text-espresso rounded-xl h-10 px-5 shadow-md">
           <MessageCircle className="w-4 h-4 mr-2" />
           Zalo đăng ký ngay
         </Button>
@@ -59,7 +59,7 @@ export default function CourseInfoPage() {
 
       {/* Desktop Contact CTA (not sticky) */}
       <div className="hidden md:flex justify-center mb-16">
-        <Button onClick={handleContact} size="lg" className="bg-rose hover:bg-rose-dark rounded-xl h-14 px-10 text-lg shadow-lg">
+        <Button onClick={handleContact} size="lg" className="bg-rose text-espresso hover:bg-rose-dark hover:text-espresso rounded-xl h-14 px-10 text-lg shadow-lg">
           <MessageCircle className="w-5 h-5 mr-3" />
           Liên hệ tư vấn qua Zalo
         </Button>
