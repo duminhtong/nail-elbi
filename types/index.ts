@@ -1,4 +1,32 @@
 export type ImageCategory = 'nail_menu' | 'brow_lamination' | 'lash_lift' | 'student_work' | 'classroom';
+
+export interface GelXWorkshopContent {
+  id: string
+  hero_eyebrow: string
+  hero_title: string
+  hero_subtitle: string
+  hero_claim: string
+  hero_lead: string
+  usp_title: string
+  usp_subtitle: string
+  duration: string
+  objective: string
+  instructor: string
+  registration_label: string
+  registration_url: string
+  curriculum: { title: string; items: string[] }[]
+  updated_at: string
+}
+
+export interface GelXWorkshopGalleryItem {
+  id: string
+  created_at: string
+  name: string
+  title: string
+  storage_path: string
+  public_url: string
+  sort_order: number
+}
 export type YoutubeCategory = 'free_lesson' | 'student_interview';
 export type CourseInfoSection = 'pricing' | 'rules' | 'benefits';
 
