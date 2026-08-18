@@ -18,6 +18,26 @@ export interface GelXWorkshopContent {
   updated_at: string
 }
 
+export type GelXLeadStatus = 'new' | 'contacted' | 'consulted' | 'registered' | 'not_fit'
+
+export interface GelXWorkshopLead {
+  id: string
+  created_at: string
+  updated_at: string
+  full_name: string
+  contact: string
+  experience: string
+  area?: string | null
+  note?: string | null
+  source: string
+  utm_source?: string | null
+  utm_medium?: string | null
+  utm_campaign?: string | null
+  status: GelXLeadStatus
+  admin_note?: string | null
+  consent_at: string
+}
+
 export interface GelXWorkshopGalleryItem {
   id: string
   created_at: string

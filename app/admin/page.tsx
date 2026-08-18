@@ -8,6 +8,7 @@ import YoutubeManager from '@/components/admin/YoutubeManager'
 import BlogManager from '@/components/admin/BlogManager'
 import CourseInfoEditor from '@/components/admin/CourseInfoEditor'
 import GelXWorkshopEditor from '@/components/admin/GelXWorkshopEditor'
+import GelXLeadManager from '@/components/admin/GelXLeadManager'
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('nail_menu')
@@ -30,6 +31,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="blog" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-indigo-600 data-[state=active]:text-white">✍️ Bài Viết Blog</TabsTrigger>
             <TabsTrigger value="course_info" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white">ℹ️ Thông Tin Khóa Học</TabsTrigger>
             <TabsTrigger value="gel_x_workshop" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-rose data-[state=active]:text-white">◉ Gel X Workshop</TabsTrigger>
+            <TabsTrigger value="gel_x_leads" className="whitespace-nowrap rounded-md px-4 py-2 data-[state=active]:bg-red data-[state=active]:text-white">◎ Lead Gel X</TabsTrigger>
           </TabsList>
           
           <TabsContent value="nail_menu" className="mt-0 outline-none">
@@ -58,6 +60,9 @@ export default function AdminDashboard() {
           </TabsContent>
           <TabsContent value="gel_x_workshop" className="mt-0 outline-none">
              <GelXWorkshopEditor />
+          </TabsContent>
+          <TabsContent value="gel_x_leads" className="mt-0 outline-none">
+             <GelXLeadManager />
           </TabsContent>
         </Tabs>
       </main>

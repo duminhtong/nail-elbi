@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import styles from './workshop.module.css'
 import { useGelXWorkshop } from '@/lib/hooks/useGelXWorkshop'
+import LeadForm from './LeadForm'
 
 const shots = [
   { src: '/gel-x-workshop/gel-x-01.jpeg', title: 'Đo form chuẩn', label: '01' },
@@ -86,6 +87,8 @@ export default function GelXWorkshopClient() {
         </section>
 
         <section className={styles.statement} aria-label="Tuyên ngôn workshop"><p>HỌC XONG</p><h2>ÁP DỤNG ĐƯỢC<br /><em>SALON.</em></h2><span className={styles.statementMark}>/ ELBI EDUCATION</span></section>
+
+        <section id="register" className={styles.section} aria-labelledby="register-title"><div className={styles.sectionHead}><div><p className={styles.kicker}>03 / Đăng ký tư vấn</p><h2 id="register-title">Bắt đầu từ<br />một câu hỏi.</h2></div><p>Để lại thông tin ngắn gọn. Nhân viên Elbi sẽ liên hệ tư vấn workshop và lộ trình phù hợp với bạn.</p></div><LeadForm registrationUrl={content?.registration_url || registrationUrl} /></section>
 
         <section id="gallery" className={styles.section} aria-labelledby="gallery-title"><div className={styles.sectionHead}><div><p className={styles.kicker}>02 / Technique gallery</p><h2 id="gallery-title">Nhìn gần hơn<br />vào kỹ thuật.</h2></div><p>Chạm vào từng ảnh để xem chi tiết. Dùng phím mũi tên để di chuyển trong gallery.</p></div><div className={styles.gallery}>{workshopShots.map((shot, index) => <button key={shot.src} className={`${styles.shot} ${index === 0 ? styles.featuredShot : ''}`} onClick={() => setActive(index)} aria-label={`Xem ảnh ${shot.title}`}><Image src={shot.src} alt={shot.title} fill sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 20vw" /><span><b>{shot.label}</b><em>{shot.title}</em></span></button>)}</div></section>
 
