@@ -17,7 +17,7 @@ export default function QuickNavCards() {
         <div><p className="editorial-kicker mb-3">Explore / Elbi universe</p><h2 id="explore-title" className="font-display text-3xl font-light tracking-[-0.06em] text-rose md:text-5xl">Ba cách để bước vào Elbi.</h2></div>
         <span className="hidden text-xs uppercase tracking-[0.18em] text-rose-muted md:block">03 / 03</span>
       </div>
-      <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-12 md:grid-rows-[280px_220px]">
+      <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-12 md:grid-rows-[minmax(300px,1fr)_minmax(300px,1fr)]">
         {modules.map((module, index) => {
           const external = module.href.startsWith('http')
           return <Link key={module.index} href={module.href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} className={`group relative min-h-[300px] overflow-hidden border border-espresso-line bg-espresso-panel p-6 transition-colors hover:border-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red md:min-h-0 md:p-8 ${index === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'} ${module.tone === 'red' ? 'bg-red' : ''}`}>
