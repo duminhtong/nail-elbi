@@ -28,7 +28,7 @@ export default function HeroBanner() {
           </Button>
           
           <Button asChild size="lg" className="w-full md:w-auto h-16 md:h-20 bg-rose hover:bg-rose-dark text-white rounded-xl shadow-none transition-all text-lg px-12 font-bold tracking-wide">
-            <Link href="/nailbox">
+            <Link href="https://elbinailbox.com" target="_blank" rel="noreferrer">
               NAILBOX BY ELBI
             </Link>
           </Button>
